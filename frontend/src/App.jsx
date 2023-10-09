@@ -6,7 +6,7 @@ export const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-            <Route exact path='/' Component={login}></Route>
+            <Route exact path='/'  Component={login}></Route>
         </Routes>
       </BrowserRouter>
     </>

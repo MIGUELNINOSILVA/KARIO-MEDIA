@@ -21,7 +21,7 @@ const usuarioSchema = new Schema(
     rol: [
       {
         ref: "Rol",
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId
       },
     ],
   },

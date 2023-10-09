@@ -8,8 +8,10 @@ export const signUp = async (req, res) => {
       nombre_usuario,
       correo,
       contraseña: await Usuario.encryptPassword(contraseña),
+      rol: rol ? rol: "65243b204bf01c816d9383a6"
     });
 
+    await newUsuario.save();
     console.log(newUsuario);
 
   } catch (error) {

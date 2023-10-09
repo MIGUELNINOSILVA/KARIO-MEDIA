@@ -8,6 +8,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
             <Route exact path='/'  Component={login}></Route>
+            <Route path='*' Component={<Error404/>}></Route> {/*//! Esta ruta debe estar de ultimo!! */}
         </Routes>
       </BrowserRouter>
     </>

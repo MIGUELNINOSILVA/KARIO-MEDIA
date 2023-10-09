@@ -19,6 +19,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import HelpIcon from '@mui/icons-material/Help';
 import Logo from './../assets/img/KARIO_LOGO.png'
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -91,7 +92,7 @@ function ResponsiveAppBar() {
             <Button color="inherit" startIcon={<DeleteForeverIcon style={{color:'#FC7124'}}/>}>Eliminar</Button>
             <img src={Logo} alt="Logo..." style={{height:'30px'}}/>
             <Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}>Reportar</Button>
-            <Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button>
+            <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button></NavLink>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

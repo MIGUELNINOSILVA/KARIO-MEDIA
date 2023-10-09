@@ -1,7 +1,7 @@
 import React from 'react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 
-const Principal = () => {
+const help = () => {
   return (
     <>
         <ResponsiveAppBar/>
@@ -9,4 +9,4 @@ const Principal = () => {
   )
 }
 
-export default Principal
+export default help

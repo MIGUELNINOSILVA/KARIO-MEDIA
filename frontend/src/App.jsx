@@ -1,8 +1,14 @@
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import login from './pages/login'
 
 export const App = () => {
   return (
     <>
-      <h1>Desde App</h1>
+      <BrowserRouter>
+        <Routes>
+            <Route exact path='/' Component={login}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

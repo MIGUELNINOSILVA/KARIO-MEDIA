@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.primer-fondo{
+    background-image: url(../img/pexels-pixabay-1594002x.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.segundo-fondo{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+.card-login{
+    position: absolute;
+    background-color: white;
+    top: 20%;
+    left: 30%;
+
+    width: 600px;
+    height: 50%;
+    border-radius: 10%;
+}
+
+.container-login{
+    display: flex;
+    flex-direction: column;
+}

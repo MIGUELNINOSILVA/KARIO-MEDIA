@@ -14,24 +14,76 @@
 }
 
 .segundo-fondo{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     height: 100vh;
     position: absolute;
+    overflow: auto;
 }
 
-.card-login{
-    position: absolute;
-    background-color: white;
-    top: 20%;
-    left: 30%;
 
-    width: 600px;
-    height: 50%;
-    border-radius: 10%;
-}
 
 .container-login{
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
+    position: absolute;
+    background-color: white;
+    top: 15%;
+    left: 25%;
+    width: 49%;
+    border-radius: 10%;
+    
 }
+
+.contenido-login{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 15% 5% 15%;
+   
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+}
+
+.logo > img{
+
+    width: 110px;
+    height: 100px;
+}
+
+.formulario .label{
+    text-align: start !important;
+    font-size: 20px;
+
+}
+
+.contenedor-button{
+    width: 100%;
+    height: 100%;
+   
+}
+
+
+
+.contenedor-button .button{
+  
+    background-color: orange;
+    padding: 3% 12% 3% 12%;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-size: 25px;
+    margin:  20px 0px 20px 0px;
+}
+

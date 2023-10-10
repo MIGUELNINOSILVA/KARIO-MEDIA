@@ -7,7 +7,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-import { colors } from '@mui/material';
 export default function BotonAAyuda() {
   const [open, setOpen] = React.useState(false);
 
@@ -19,13 +18,27 @@ export default function BotonAAyuda() {
     setOpen(false);
   };
 
+  const Ayuda = [
+    {
+      titulo_ayuda:'Modificacion del Proyecto',
+      descripcion_ayuda: 'Quiero modificar las bases de mi proyecto pero no puedo',
+      fecha_creacion_ayuda:'2023-10-05',
+      nombre_usuario:'Miguel Niño'
+    },
+    {
+      titulo_ayuda:'Modificacion diseño mobile',
+      descripcion_ayuda: 'no me estan siriviendo las mediaqueries',
+      fecha_creacion_ayuda:'2023-10-05',
+      nombre_usuario:'Deiby Parada'
+    }
+  ]
+
   return (
    <>
      <div style={{display:'flex',flexDirection:'row-reverse', margin:'10px',border:'#FC7124'}}>
       <Button variant="outlined" onClick={handleClickOpen} style={{color:'#FC7124'}}>
         Agregar Ayuda
       </Button>
-        <form action="">
         <Dialog
         open={open}
         onClose={handleClose}
@@ -46,7 +59,7 @@ export default function BotonAAyuda() {
           <Button onClick={handleClose} autoFocus style={{color:'#FC7124'}}>Añadir</Button>
         </DialogActions>
       </Dialog>
-        </form>
+  
     </div>
    </>
   );

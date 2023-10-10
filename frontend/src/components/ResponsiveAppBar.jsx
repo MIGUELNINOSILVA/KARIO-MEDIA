@@ -87,7 +87,7 @@ function ResponsiveAppBar() {
             <Button color="inherit" startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}>Login</Button>
             <Button color="inherit" startIcon={<RefreshIcon style={{color:'#FC7124'}}/>}>Refrescar</Button>
             <Button color="inherit" startIcon={<DeleteForeverIcon style={{color:'#FC7124'}}/>}>Eliminar</Button>
-            <img src={Logo} alt="Logo..." style={{height:'30px'}}/>
+            <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>
             <Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}>Reportar</Button>
             <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button></NavLink>
           </Box>

@@ -1,5 +1,7 @@
 import React from 'react'
 import usu from './../assets/img/VectorUsuario.svg'
+
+
 const ListaDeAyudas = [
     {
         titulo:'Titulo de la ayuda',
@@ -27,6 +29,9 @@ const ListaDeAyudas = [
     }
 ]
 const Ayudas = () => {
+
+    
+
     return (
         <>
             {ListaDeAyudas.map((ayuda, index) => (

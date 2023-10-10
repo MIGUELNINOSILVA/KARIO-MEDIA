@@ -10,7 +10,6 @@ const FondoLogin = () =>  {
           <div className='card-login'>
               <div className='container-login'>
                   <Login></Login>
-                  
               </div>
           </div>
         </div>

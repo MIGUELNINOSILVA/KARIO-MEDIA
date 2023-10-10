@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: absolute;
     width: 100%;
     height: 100vh;
 }
@@ -19,9 +20,7 @@
     width: 100%;
     height: 100vh;
     position: absolute;
-    overflow: auto;
 }
-
 
 
 .container-login{
@@ -29,7 +28,7 @@
     flex-direction:column;
     position: absolute;
     background-color: white;
-    top: 15%;
+    top: 10%;
     left: 25%;
     width: 49%;
     border-radius: 10%;
@@ -49,7 +48,6 @@
     text-align: center;
     gap: 10px;
 }
-
 .logo{
     display: flex;
     flex-direction: column;
@@ -86,5 +84,241 @@
     color: white;
     font-size: 25px;
     margin:  20px 0px 20px 0px;
+}
+
+@media (max-width: 1448px) {
+
+    .container-login{
+        display: flex;
+        flex-direction:column;
+        position: relative;
+        background-color: white;
+        margin: 3% 0% 3% 0%;
+        max-width: 50%;
+        max-height: 50%;
+        border-radius: 20px;
+        
+    }
+    
+    .contenido-login{
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+       /*  margin: 5% 15% 5% 15%; */
+       
+    }
+    
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-style: normal;
+    }
+    
+    .logo > img{
+    
+        width: 110px;
+        height: 100px;
+    }
+    
+    .formulario .label{
+        text-align: start !important;
+        font-size: 20px;
+    
+    }
+    
+    .contenedor-button{
+        width: 100%;
+        height: 100%;
+       
+    }
+    
+    
+    
+    .contenedor-button .button{
+      
+        background-color: orange;
+        padding: 3% 12% 3% 12%;
+        border-radius: 40px;
+        border: none;
+        color: white;
+        font-size: 25px;
+        margin:  20px 0px 20px 0px;
+    }
+}
+
+
+/* Media query para hacerlo responsive */
+@media (max-width: 968px) {
+    .container-login{
+        position: relative;
+        background-color: white;
+        margin: 15% 0% 15% 0%;
+        max-width: 55%;
+        max-height: 60%;
+        border-radius: 20px;
+        
+    }
+    
+    .contenido-login{
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+       /*  margin: 5% 15% 5% 15%; */
+       
+    }
+    
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-style: normal;
+    }
+
+    .logo h2{
+        font-size: 22px;
+    }
+    
+    .logo > img{
+    
+        width: 90px;
+        height: 80px;
+    }
+
+    .texto-medio h1{
+        font-size: 24px;
+    }
+
+    .texto-medio p{
+        font-size: 14px;
+    }
+
+    
+    .formulario .label{
+        text-align: start !important;
+        font-size:16px;
+    
+    }
+    
+    .contenedor-button{
+        width: 100%;
+        height: 100%;
+       
+    }
+    
+    
+    
+    .contenedor-button .button{
+      
+        background-color: orange;
+        padding: 3% 12% 3% 12%;
+        border-radius: 30px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        margin:  20px 0px 20px 0px;
+    }
+        .texto-final p{
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 634px) {
+    .container-login{
+        display: flex;
+        flex-direction:column;
+        position: relative;
+        background-color: white;
+        margin: 30% 0% 30% 0%;
+        max-width: 50%;
+        max-height: 70%;
+        border-radius: 20px;
+        
+    }
+    
+    .contenido-login{
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+       /*  margin: 5% 15% 5% 15%; */
+       
+    }
+    
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+
+    
+    .logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-style: normal;
+    }
+
+    .logo h2{
+        display: none;
+        font-size: 15px;
+    }
+    
+    .logo > img{
+    
+        width: 60px;
+        height: 50px;
+    }
+
+    .texto-medio h1{
+        font-size: 16px;
+    }
+
+    .texto-medio p{
+        display: none;
+        font-size: 12px;
+    }
+    
+    .formulario .label{
+        text-align: start !important;
+        font-size: 14px;
+    
+    }
+    
+    .contenedor-button{
+        width: 100%;
+        height: 100%;
+       
+    }
+    
+    .contenedor-button .button{
+      
+        background-color: orange;
+        padding: 3% 12% 3% 12%;
+        border-radius: 40px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        margin:  20px 0px 20px 0px;
+    }
+
+    .texto-final p{
+        font-size: 12px;
+    }
 }
 

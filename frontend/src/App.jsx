@@ -5,6 +5,7 @@ import FondoLogin from './pages/FondoLogin'
 import Error404 from './pages/Error404';
 import Principal from './pages/Principal';
 import help from './pages/help';
+import './assets/css/style.css'
 
 export const App = () => {
   return (

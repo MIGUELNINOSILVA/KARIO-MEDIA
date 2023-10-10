@@ -2,19 +2,28 @@ import { Button, Modal, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import {useForm} from 'react-hook-form';
 
-const ModalAyuda = () => {
-    const {register, handleSubmit} = useForm();
+const ModalAyuda = ({nuevoElemento,ListaDeAyudas}) => {
+    const {register, handleSubmit, formState:{errors},reset} = useForm();
 
+    console.log(errors);
+    console.log(ListaDeAyudas);
 
     const [modal, setModal] = useState(false);
     const abrirCerrarModal = () =>{
         setModal(!modal )
     }
-
-    const onSubmit = (data) => {
-        console.log('formulario enviado', data);
-        abrirCerrarModal(); 
+    const resetForm = () => {
+        reset({ titulo: '', descripcion: '' }); 
+        abrirCerrarModal();
     };
+    
+    const onSubmit = handleSubmit((data) => {
+        console.log('formulario enviado', data);
+        alert('enviando datos...');
+        nuevoElemento(data);
+        resetForm()
+    });
+
 
     const body = (
         <div className="cajaModal" 
@@ -30,19 +39,16 @@ const ModalAyuda = () => {
             transform: 'translate(-50%,-50%)'
             }}
         >
-            <form onSubmit={handleSubmit((data)=>{
-                console.log('formulario enviado', data);
-                abrirCerrarModal()
-            })}>
+            <form onSubmit={onSubmit}>
             <div><h2>Ingresa tu solicitud de Ayuda</h2></div>
             <br/>
-            <TextField label='Titulo' {...register('titulo')} style={{width:'100%'}}/>
+            <TextField label='Titulo' {...register('titulo',{required:true})} style={{width:'100%'}}/>
             <br/>
             <br/>
-            <TextField label='Descripcion' {...register('descripcion')} style={{width:'100%'}}/>
+            <TextField label='Descripcion' {...register('descripcion',{required:true})} style={{width:'100%'}}/>
             <br/>
             <Button type='submit'>Enviar</Button>
-            <Button onClick={()=>abrirCerrarModal()}>Cancelar</Button>
+            <Button>Cancelar</Button>
             </form>
 
         </div>
@@ -51,7 +57,7 @@ const ModalAyuda = () => {
   return (
     <div style={{display:'flex',flexDirection:'row-reverse', margin:'10px',border:'#FC7124'}}>
         <Button variant="outlined" style={{color:'#FC7124'}} onClick={()=>abrirCerrarModal()}>Añadir ayuda</Button>
-        <Modal open={modal} onClose={abrirCerrarModal}>
+        <Modal open={modal} onClose={()=>abrirCerrarModal()}>
             {body}
         </Modal>
     </div>

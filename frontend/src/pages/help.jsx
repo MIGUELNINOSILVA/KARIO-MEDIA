@@ -1,7 +1,8 @@
 import React from 'react'
 import ResponsiveAppBar from './../components/ResponsiveAppBar'
-import BotonAAyuda from '../components/BotonAAyuda'
 import ModalAyuda from '../components/ModalAyuda'
+import Ayudas from '../components/Ayudas'
+import './../assets/css/help.css'
 
 
 const help = () => {
@@ -10,7 +11,7 @@ const help = () => {
        <ResponsiveAppBar/>
        <ModalAyuda/>
        <div className="contenedorAyudas">
-        
+          <Ayudas/>
        </div>
     </div>
   )

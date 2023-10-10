@@ -1,11 +1,14 @@
 import React from 'react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
+import Reportes from '../components/Reportes'
 
 const Reportar = () => {
   return (
     <>
-    <ResponsiveAppBar/>
-    
+      <ResponsiveAppBar/>
+      <div className="contenedorReportes">
+        <Reportes/>
+      </div>
     </>
   )
 }

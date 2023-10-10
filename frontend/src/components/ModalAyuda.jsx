@@ -47,8 +47,9 @@ const ModalAyuda = ({nuevoElemento,ListaDeAyudas}) => {
             <br/>
             <TextField label='Descripcion' {...register('descripcion',{required:true})} style={{width:'100%'}}/>
             <br/>
-            <Button type='submit'>Enviar</Button>
-            <Button>Cancelar</Button>
+            <br />
+            <Button variant='contained' type='submit' style={{backgroundColor:'#FC7124'}}>Enviar</Button>
+            <Button variant='text' style={{color:'#FC7124'}}>Cancelar</Button>
             </form>
 
         </div>

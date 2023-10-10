@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import authController from "./routes/auth.routes.js";
 import rolController from "./routes/rol.routes.js";
+import categoriaController from "./routes/categoria.routes.js";
 import { createRoles } from "./libs/initialSetup.js";
 
 const app = express();
@@ -17,5 +18,6 @@ app.use(cors());
 
 app.use("/api/auth", authController);
 app.use("/api/rol", rolController);
+app.use("/api/categoria", categoriaController);
 
 export default app;

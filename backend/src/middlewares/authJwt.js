@@ -16,14 +16,30 @@ export const verifyToken = async (req, res, next) => {
   next();
 };
 
-export const isAdmin = async(req, res, next)=>{
+export const isAdmin = async (req, res, next) => {
   const user = await Usuario.findById(req.userId);
-  console.log(user);
-  const roles = await Rol.find({_id: {$in: user.rol}});
-  console.log(roles);
-  
-}
+  const roles = await Rol.find({ _id: { $in: user.rol } });
+  roles[0].nombre_rol === "Administrador"
+    ? next()
+    : res.status(403).json({ message: "Requiere rol de Administrador" });
+};
 
-export const isModerator = async(req, res, next)=>{
+export const isEmpleado = async (req, res, next) => {
+  const user = await Usuario.findById(req.userId);
+  const roles = await Rol.find({ _id: { $in: user.rol } });
+  roles[0].nombre_rol === "Empleado"
+    ? next()
+    : res.status(403).json({ message: "Requiere rol de Empleado" });
+};
 
-}
+export const isMember = async (req, res, next) => {
+  const user = await Usuario.findOne({ correo: req.body.correo });
+  if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
+
+  const roles = await Rol.find({ _id: { $in: user.rol } });
+  if (roles.length === 0)
+    return res
+      .status(404)
+      .json({ message: "Rol no encontrado, no puedes iniciar sesión" });
+  next();
+};

@@ -92,7 +92,7 @@ function ResponsiveAppBar() {
             <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button></NavLink>
           </Box>
 
-          <Box sx={{ flexGrow: 0 , display:{textAlign:'end '}}}>
+          <Box sx={{ flexGrow: 1, display: {textAlign:'end '}}}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <SettingsIcon/>
@@ -100,7 +100,6 @@ function ResponsiveAppBar() {
                 <AccountCircleIcon style={{color:'black',fontSize:'30px'}}/>
               </IconButton>
             </Tooltip>
-            
           </Box>
         </Toolbar>
       </Container>

@@ -9,6 +9,9 @@ const help = () => {
     <div>
        <ResponsiveAppBar/>
        <ModalAyuda/>
+       <div className="contenedorAyudas">
+        
+       </div>
     </div>
   )
 }

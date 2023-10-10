@@ -10,6 +10,7 @@ import areaController from "./routes/area.routes.js";
 import formulaProyectoController from "./routes/formula.proyecto.routes.js";
 import proyectoController from "./routes/proyecto.routes.js";
 import reporteController from "./routes/reporte.routes.js";
+import ayudaController from "./routes/ayuda.routes.js";
 import { createRoles } from "./libs/initialSetup.js";
 
 const app = express();
@@ -27,5 +28,6 @@ app.use("/api/area", areaController);
 app.use("/api/formulaProyecto", formulaProyectoController);
 app.use("/api/proyecto", proyectoController);
 app.use("/api/reporte", reporteController);
+app.use("/api/ayuda", ayudaController);
 
 export default app;

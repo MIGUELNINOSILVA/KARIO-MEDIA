@@ -8,6 +8,11 @@ const usuarioSchema = new Schema(
       unique: false,
       required: [true, "El nombre de usuario es obligatorio"],
     },
+    imagen: {
+      type: String,
+      unique: false,
+      required: false,
+    },
     correo: {
       type: String,
       unique: [true, "El correo ya existe"],

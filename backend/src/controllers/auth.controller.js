@@ -3,10 +3,11 @@ import jwt from "jsonwebtoken";
 
 export const signUp = async (req, res) => {
   try {
-    const { nombre_usuario, correo, contraseña, rol } = req.body;
+    const { nombre_usuario,imagen, correo, contraseña, rol } = req.body;
 
     const newUsuario = new Usuario({
       nombre_usuario,
+      imagen: imagen ? imagen : "",
       correo,
       contraseña: await Usuario.encryptPassword(contraseña),
       rol: rol ? rol : "65243b204bf01c816d9383a6",

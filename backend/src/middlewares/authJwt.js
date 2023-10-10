@@ -32,6 +32,21 @@ export const isEmpleado = async (req, res, next) => {
     : res.status(403).json({ message: "Requiere rol de Empleado" });
 };
 
+export const isAdminOrEmpleado = async (req, res, next) => {
+  const user = await Usuario.findById(req.userId);
+  const roles = await Rol.find({ _id: { $in: user.rol } });
+
+  const isAdminOrEmpleado = roles.some(
+    (role) => role.nombre_rol === "Administrador" || role.nombre_rol === "Empleado"
+  );
+
+  if (!isAdminOrEmpleado) {
+    return res.status(403).json({ message: "Requiere rol de Administrador o Empleado" });
+  }
+
+  next();
+};
+
 export const isMember = async (req, res, next) => {
   const user = await Usuario.findOne({ correo: req.body.correo });
   if (!user) return res.status(404).json({ message: "Usuario no encontrado" });

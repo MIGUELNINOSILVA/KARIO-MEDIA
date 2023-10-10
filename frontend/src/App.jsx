@@ -6,7 +6,7 @@ export const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-            <Route exact path='/login' Component={FondoLogin}></Route>
+            <Route exact path='/login' Component={FondoLogin}></Route>    
         </Routes>
       </BrowserRouter>
     </>

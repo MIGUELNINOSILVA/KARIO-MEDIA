@@ -24,7 +24,7 @@ swaggerDefinition: {
             'application/json': {
             schema: {
                 type: 'object',
-                $ref: '#/components/schemas/Autenticacion'
+                $ref: '#/components/schemas/Authentificacion'
             },
             example: {
                 nombre_usuario: "Miguel Angel Niño",
@@ -36,7 +36,7 @@ swaggerDefinition: {
         },
         responses: {
         '200': {
-            description: 'Usuario Registrado',
+            description: 'Usuario creado correctamente',
             content: {
             'application/json': {
                 schema: {
@@ -49,6 +49,12 @@ swaggerDefinition: {
                 },
             },
             },
+        },
+        '400': {
+            description: 'Solicitud Incorrecta / Error en la solicitud',
+        },
+        '500': {
+            description: 'Error interno del servidor',
         },
         },
         },
@@ -63,7 +69,7 @@ swaggerDefinition: {
             'application/json': {
             schema: {
                 type: 'object',
-                $ref: '#/components/schemas/Autenticacion'
+                $ref: '#/components/schemas/Authentificacion'
             },
             example: {
                 correo: 'miguel1@gmail.com',
@@ -86,6 +92,18 @@ swaggerDefinition: {
                 },
             },
             },
+        },
+        '400': {
+            description: 'Solicitud Incorrecta / Error en la solicitud',
+        },
+        '401': {
+            description: 'Contraseña incorrecta',
+        },
+        '404':{
+            description: 'Usuario no encontrado'
+        },
+        '500': {
+            description: 'Error al iniciar sesión',
         },
         },
         },
@@ -124,6 +142,18 @@ swaggerDefinition: {
                 },
             },
             },
+            '401': {
+                description: 'Token expirado',
+            },
+            '403':{
+                description: 'Requiere rol de Administrador'
+            },
+            '404':{
+                description: 'Usuario no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener los roles'
+            },
         },
         },
     },
@@ -153,6 +183,12 @@ swaggerDefinition: {
                 },
             },
             },
+            '404':{
+                description: 'Recurso no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener las Areas'
+            },
         },
         },
     },
@@ -179,6 +215,12 @@ swaggerDefinition: {
                 },
             },
             },
+            '404':{
+                description: 'Recurso no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener la Categoria'
+            },
         },
         },
     },
@@ -204,6 +246,12 @@ swaggerDefinition: {
                 ],
                 },
             },
+            },
+            '404':{
+                description: 'Recurso no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener las Formulas de los Proyectos'
             },
         },
         },
@@ -239,6 +287,12 @@ swaggerDefinition: {
                 },
             },
             },
+            '404':{
+                description: 'Recurso no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener los Proyectos'
+            },
         },
         },
     },
@@ -267,6 +321,12 @@ swaggerDefinition: {
                 ],
                 },
             },
+            },
+            '404':{
+                description: 'Recurso no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener las solicitudes de ayuda'
             },
         },
         },
@@ -307,6 +367,18 @@ swaggerDefinition: {
                 ],
                 },
             },
+            },
+            '401': {
+                description: 'Token expirado',
+            },
+            '403':{
+                description: 'No se ha proporcionado un token'
+            },
+            '404':{
+                description: 'Usuario no encontrado'
+            },
+            '500':{
+                description: 'Error al obtener los Reportes'
             },
         },
         },

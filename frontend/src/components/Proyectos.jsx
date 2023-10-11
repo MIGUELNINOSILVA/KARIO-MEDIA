@@ -46,7 +46,6 @@ const Proyectos = () => {
             <h5>Frecuencia</h5>
             <h5>Cumplimiento</h5>
             <h5>Área</h5>
-   
         </div>
         {listado.map((proyecto,index)=>(
             <div className="proyectoTarjeta" key={index}>

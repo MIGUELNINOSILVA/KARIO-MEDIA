@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ModalProyectos from "./ModalProyectos";
 import { IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
   arrayMove,
-  useSortable,
 } from "@dnd-kit/sortable";
+import {
+  Box,
+  ChakraProvider,
+  CircularProgress,
+  CircularProgressLabel,
+} from "@chakra-ui/react";
+import TarjetaProyectoIndicador from "./TarjetaProyectoIndicador";
 
 const listaProyectos = [
   {
@@ -39,29 +44,15 @@ const Proyectos = () => {
     setListado(nuevoProyecto);
     localStorage.setItem("listaProyectos", JSON.stringify(nuevoProyecto));
   };
-  const [people, setPeople] = useState([
-    {
-      name: "John",
-      id: 1,
-    },
-    {
-      name: "Peter",
-      id: 2,
-    },
-    {
-      name: "Sue",
-      id: 3,
-    },
-  ]);
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
-
-    setPeople((people) => {
-      const oldIndex = people.findIndex((person) => person.id === active.id);
-      const newIndex = people.findIndex((person) => person.id === over.id);
-
-      return arrayMove(people, oldIndex, newIndex);
+    setListado((listado) => {
+      const oldIndex = listado.findIndex((lista) => lista.indicador === active.id);
+      const newIndex = listado.findIndex((lista) => lista.indicador === over.id);
+      console.log("inicio", oldIndex);
+      console.log("fin", newIndex);
+      return arrayMove(listado, oldIndex, newIndex);
     });
   };
   return (
@@ -78,22 +69,13 @@ const Proyectos = () => {
         <h5>Cumplimiento</h5>
         <h5>Área</h5>
       </div>
-      {listado.map((proyecto, index) => (
-        <div className="proyectoTarjeta" key={index}>
-          <div className="infoTarjetaProyecto">
-            <p>{proyecto.indicador}</p>
-            <p>{proyecto.descripcion}</p>
-            <p>{proyecto.categoria}</p>
-            <p>{proyecto.fechaInicio}</p>
-            <p>{proyecto.fechaFinal}</p>
-            <p>{proyecto.formula}</p>
-            <p>{proyecto.frecuencia}</p>
-            <p>{proyecto.cumplimiento}</p>
-            <p>{proyecto.area}</p>
-          </div>
-          <MenuIcon style={{ margin: "5px", fontSize: "35px" }} />
-        </div>
-      ))}
+      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+        <SortableContext items={listado} strategy={verticalListSortingStrategy}>
+          {listado.map((proyecto, index) => (
+            <TarjetaProyectoIndicador key={index} proyecto={proyecto} />
+          ))}
+        </SortableContext>
+      </DndContext>
     </>
   );
 };

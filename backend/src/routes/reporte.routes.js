@@ -5,6 +5,6 @@ const router = Router();
 import { getReportes } from "../controllers/reporte.controller.js";
 import { isMember, verifyToken } from "../middlewares/authJwt.js";
 
-router.get("/", [verifyToken, isMember], getReportes);
+router.get("/", [verifyToken], getReportes);
 
 export default router;

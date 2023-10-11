@@ -16,9 +16,9 @@ const TarjetaProyectoIndicador = ({ proyecto }) => {
     let valor = proyecto.cumplimiento;
   return (
     <div className="proyectoTarjeta"  ref={setNodeRef}
-    {...attributes}
-    {...listeners}
-    style={style}>
+      {...attributes}
+      {...listeners}
+      style={style}>
       <div className="infoTarjetaProyecto">
         <p>{proyecto.indicador}</p>
         <p>{proyecto.descripcion}</p>

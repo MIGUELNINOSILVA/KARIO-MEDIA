@@ -1,11 +1,9 @@
 import React from 'react'
-import ModalReportes from './ModalReportes'
 
 const Reportes = () => {
   return (
-    <ModalReportes/>
+    <div>Reportes</div>
   )
 }
 
 export default Reportes
-

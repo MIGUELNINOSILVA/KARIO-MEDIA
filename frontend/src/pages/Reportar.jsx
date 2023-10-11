@@ -1,6 +1,6 @@
 import React from 'react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
-import Reportes from '../components/Reportes'
+import Reportes from '../components/Reportes.jsx'
 
 const Reportar = () => {
   return (

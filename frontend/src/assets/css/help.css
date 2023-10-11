@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contenedorAyudas{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+    padding: 10px;
+    gap: 30px;
+}
+
+.ayudaTarjeta{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    min-width: 500px;
+    height: 70px;
+    justify-content: start;
+    gap: 20px;
+    border-radius: 31px;
+    background: #FFF;
+    box-shadow: -5px -5px 10px 6px rgba(0, 0, 0, 0.10);
+    padding: 0 20px;
+}
+
+.usuarioAyuda{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.usuarioAyuda h4{
+    margin: 0;
+}
+
+.infoAyuda{
+    display: flex;
+    gap: 25px;
+}
+
+.infoAyuda input{
+    border: none;
+    width: 100%;
+}
+
+.infoAyuda label{
+    font-weight: bold;
+    color: #FC7124;
+}
+
+@media screen and (max-width: 768px) {
+    .ayudaTarjeta {
+        flex-direction: column; 
+        height: auto; 
+        padding: 10px;
+        text-align: center;
+    }
+
+    .usuarioAyuda {
+        flex-direction: column; 
+    }
+
+    .infoAyuda {
+        gap: 10px; 
+    }
+}

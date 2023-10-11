@@ -17,3 +17,7 @@ td:nth-child(9) {
   border-top-right-radius: 1rem !important;
   /* border-right: 1px solid #000000 !important; */
 }
+
+.menu-icon{
+  font-size: 4rem !important;
+}

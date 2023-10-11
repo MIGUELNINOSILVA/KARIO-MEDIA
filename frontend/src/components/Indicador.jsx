@@ -75,7 +75,7 @@ export const Indicador = ({ user }) => {
       <td className="td-element">
         <div>{user.name}</div>
       </td>
-        <MenuIcon />
+        <MenuIcon className="menu-icon" />
     </tr>
   );
 };

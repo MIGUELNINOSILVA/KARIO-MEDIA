@@ -11,7 +11,9 @@ import formulaProyectoController from "./routes/formula.proyecto.routes.js";
 import proyectoController from "./routes/proyecto.routes.js";
 import reporteController from "./routes/reporte.routes.js";
 import ayudaController from "./routes/ayuda.routes.js";
-import { createRoles } from "./libs/initialSetup.js";
+import { createRoles } from "./libs/initialSetup.js"; 
+import swaggerSpec from "./SwaggerConfig.js";
+import swaggerUI from 'swagger-ui-express'
 
 const app = express();
 
@@ -29,5 +31,7 @@ app.use("/api/formulaProyecto", formulaProyectoController);
 app.use("/api/proyecto", proyectoController);
 app.use("/api/reporte", reporteController);
 app.use("/api/ayuda", ayudaController);
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
 
 export default app;

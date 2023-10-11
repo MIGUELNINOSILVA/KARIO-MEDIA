@@ -7,4 +7,6 @@ import { isMember, verifyToken } from "../middlewares/authJwt.js";
 
 router.get("/", [verifyToken, isMember], getProyectos);
 
+router.get("/", getProyectos);
+
 export default router;

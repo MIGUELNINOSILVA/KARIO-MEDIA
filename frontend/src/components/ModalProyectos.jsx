@@ -6,9 +6,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const ModalProyectos = () => {
+const ModalProyectos = ({nuevoElemento,listaProyectos}) => {
     const {register , handleSubmit, formState:{errors} , reset} = useForm();
     console.log(errors);
+    console.log(listaProyectos);
 
     const [modal, setModal] = useState(false)
 
@@ -16,10 +17,29 @@ const ModalProyectos = () => {
         setModal(!modal);
     }
 
-    const onSubmit = handleSubmit((data) =>{
-        console.log('Formulario enviado',data);
+    const resetForm =()=>{
+        reset({
+            indicador:'',
+            descripcion:'',
+            categoria:'',
+            fechaInicio:'',
+            fechaFinal:'',
+            formula:'',
+            area:'',
+            frecuencia:'',
+            cumplimiento:''
+        });
+        abrirCerrarModal();
+    }
 
-    })
+    const onSubmit = handleSubmit((data) =>{
+        console.log('hola');
+        console.log('Formulario enviado',data);
+        alert('Enviando datos...');
+        nuevoElemento(data);
+        resetForm();
+        abrirCerrarModal();
+    });
 
 
 
@@ -119,7 +139,7 @@ const ModalProyectos = () => {
                     <TextField  label='cumplimiento' {...register('cumplimiento',{required:true})} type='number' size='small' />
                 </FormControl>
                 </div>
-                <Button style={{backgroundColor:'#FC7124' , color:'white'}}>Enviar</Button>
+                <Button type='submit' style={{backgroundColor:'#FC7124' , color:'white'}}>Enviar</Button>
                 <Button style={{color:'#FC7124'}}>Cancelar</Button>
             </form>
         </div>

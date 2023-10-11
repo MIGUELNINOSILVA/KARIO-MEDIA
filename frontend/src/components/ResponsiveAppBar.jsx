@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
@@ -22,8 +21,6 @@ import Logo from './../assets/img/KARIO_LOGO.png'
 import { NavLink } from 'react-router-dom';
 
 
-
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -86,16 +83,16 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' , justifyContent:'center',gap:100 } }}>
             <Button color="inherit" startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}>Login</Button>
             <Button color="inherit" startIcon={<RefreshIcon style={{color:'#FC7124'}}/>}>Refrescar</Button>
             <Button color="inherit" startIcon={<DeleteForeverIcon style={{color:'#FC7124'}}/>}>Eliminar</Button>
-            <img src={Logo} alt="Logo..." style={{height:'30px'}}/>
-            <Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}>Reportar</Button>
+            <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>
+            <NavLink to='/reportes'style={{color:'black'}}><Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}>Reportar</Button></NavLink>
             <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button></NavLink>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 1, display: {textAlign:'end '}}}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <SettingsIcon/>
@@ -103,7 +100,6 @@ function ResponsiveAppBar() {
                 <AccountCircleIcon style={{color:'black',fontSize:'30px'}}/>
               </IconButton>
             </Tooltip>
-            
           </Box>
         </Toolbar>
       </Container>

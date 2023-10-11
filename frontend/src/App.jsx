@@ -7,6 +7,8 @@ import Principal from './pages/Principal';
 import help from './pages/help';
 import FondoRegister from './pages/FondoRegister';
 import FondoBienvenido from './pages/FondoBienvenido';
+import './assets/css/style.css'
+import Reportar from './pages/Reportar';
 
 export const App = () => {
   return (
@@ -18,6 +20,7 @@ export const App = () => {
             <Route exact path='/bienvenido' Component={FondoBienvenido}></Route>    
             {/* <Route exact path='/'  Component={login}></Route> */}
             <Route exact path='/Kario' Component={Principal}></Route>
+            <Route exact path='/reportes' Component={Reportar}></Route>
             <Route exact path='/help' Component={help}></Route>
             <Route exact path='*' Component={Error404}></Route> {/*//! Esta ruta debe estar de ultimo!! */}
         </Routes>

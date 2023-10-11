@@ -1,5 +1,4 @@
 import { useSortable } from "@dnd-kit/sortable";
-import MenuIcon from '@mui/icons-material/Menu';
 
 export const Indicador = ({ user }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
@@ -22,14 +21,7 @@ export const Indicador = ({ user }) => {
     >
       <td>{user.name}</td>
       <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td>{user.name}</td>
-      <td><MenuIcon /></td>
+      {/* Agrega más celdas td y estilos según sea necesario */}
     </tr>
   );
 };

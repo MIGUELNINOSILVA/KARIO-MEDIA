@@ -30,6 +30,7 @@ export const PanelIndicadores = () => {
     setPeople((people) => {
       const oldIndex = people.findIndex((person) => person.id === active.id);
       const newIndex = people.findIndex((person) => person.id === over.id);
+
       return arrayMove(people, oldIndex, newIndex);
     });
   };
@@ -63,7 +64,7 @@ export const PanelIndicadores = () => {
               strategy={verticalListSortingStrategy}
             >
               {people.map((user) => (
-                <Indicador user={user} key={user.id} id={user.id} />
+                <Indicador user={user} key={user.id} />
               ))}
             </SortableContext>
           </tbody>

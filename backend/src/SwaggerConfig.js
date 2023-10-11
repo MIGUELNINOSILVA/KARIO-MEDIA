@@ -14,6 +14,119 @@ swaggerDefinition: {
     },
     ],
     paths: {
+    '/api/auth/signup': {
+        post: {
+        summary: 'Ingresa los nuevos datos de los usuarios en la base de datos',
+        tags: ['Authentificacion'],
+        requestBody: {
+        required: true,
+        content: {
+            'application/json': {
+            schema: {
+                type: 'object',
+                $ref: '#/components/schemas/Autenticacion'
+            },
+            example: {
+                nombre_usuario: "Miguel Angel Niño",
+                correo: 'miguel1@gmail.com',
+                contraseña: 'miguel12345'
+            },
+            },
+        },
+        },
+        responses: {
+        '200': {
+            description: 'Usuario Registrado',
+            content: {
+            'application/json': {
+                schema: {
+                    $ref: '#/components/schemas/Authentificacion'
+                },
+                example: {
+                    nombre_usuario: "Miguel Angel Niño",
+                    correo: 'miguel1@gmail.com',
+                    contraseña: 'miguel12345'
+                },
+            },
+            },
+        },
+        },
+        },
+    },
+    '/api/auth/signin': {
+        post: {
+        summary: 'Authentifica los datos del Usuario',
+        tags: ['Authentificacion'],
+        requestBody: {
+        required: true,
+        content: {
+            'application/json': {
+            schema: {
+                type: 'object',
+                $ref: '#/components/schemas/Autenticacion'
+            },
+            example: {
+                correo: 'miguel1@gmail.com',
+                contraseña: 'miguel12345'
+            },
+            },
+        },
+        },
+        responses: {
+        '200': {
+            description: 'Usuario Logueado',
+            content: {
+            'application/json': {
+                schema: {
+                    $ref: '#/components/schemas/Authentificacion'
+                },
+                example: {
+                    correo: 'miguel1@gmail.com',
+                    contraseña: 'miguel12345'
+                },
+            },
+            },
+        },
+        },
+        },
+    },
+    '/api/rol': {
+        get: {
+        summary: 'Retorna todas los roles disponibles en la base de datos',
+        tags: ['Rol'],
+        parameters: [
+            {
+                name: 'x-access-token',
+                in: 'header', // Indica que se proporciona como un parámetro de consulta
+                description: 'Token de autenticación',
+                required: true,
+                schema: {
+                type: 'string',
+                },
+            },
+        ],
+        responses: {
+            '200': {
+            description: 'Todas los Roles disponibles en la base de datos han sido retornados',
+            content: {
+                'application/json': {
+                schema: {
+                    type: 'array',
+                    items: {
+                    $ref: '#/components/schemas/Rol',
+                    },
+                },
+                example: [
+                    {
+                        nombre_rol: "Empleado",
+                    },
+                ],
+                },
+            },
+            },
+        },
+        },
+    },
     '/api/area': {
         get: {
         summary: 'Retorna todas las áreas de la base de datos',
@@ -129,9 +242,122 @@ swaggerDefinition: {
         },
         },
     },
+    '/api/ayuda': {
+        get: {
+        summary: 'Retorna todas las solicitudes de ayuda de la base de datos',
+        tags: ['Ayuda'],
+        responses: {
+            '200': {
+            description: 'Todas las solicitudes de la base de datos han sido retornadas',
+            content: {
+                'application/json': {
+                schema: {
+                    type: 'array',
+                    items: {
+                    $ref: '#/components/schemas/Ayuda',
+                    },
+                },
+                example: [
+                    {
+                        titulo_ayuda: "Cambios en el proyecto",
+                        descripcion_ayuda: "Necesito cambiar el alcance de mi proyecto para incluir nuevas características.",
+                        fecha_creacion_ayuda: "2023-09-20T00:00:00.000Z",
+                        id_usuario_ayuda: "65240951378a3ba512a6db6e"
+                    },
+                ],
+                },
+            },
+            },
+        },
+        },
+    },
+    '/api/reporte': {
+        get: {
+        summary: 'Retorna todos reportes de la base de datos',
+        tags: ['Reporte'],
+        parameters: [
+            {
+                name: 'x-access-token',
+                in: 'header', // Indica que se proporciona como un parámetro de consulta
+                description: 'Token de autenticación',
+                required: true,
+                schema: {
+                type: 'string',
+                },
+            },
+        ],
+        responses: {
+            '200': {
+            description: 'Todas los reportes de la base de datos han sido retornadas',
+            content: {
+                'application/json': {
+                schema: {
+                    type: 'array',
+                    items: {
+                    $ref: '#/components/schemas/Reporte',
+                    },
+                },
+                example: [
+                    {
+                        titulo_reporte: "Proyecto Hackeado",
+                        descripcion_reporte: "Un externo ingreso en mi proyecto sin mi conocimiento y altero los datos que se encontraban dentro del proyecto",
+                        fecha_creacion_reporte: "2023-09-09",
+                        id_usuario_reporte: "652403f7378a3ba512a6db2d"
+                    },
+                ],
+                },
+            },
+            },
+        },
+        },
+    },
     }, // Fin de la sección paths
     components: {
     schemas: {
+        Authentificacion: {
+        type: 'object',
+        properties: {
+            nombre_usuario: {
+            type: 'string',
+            description: 'Nombre completo del Usuario',
+            },
+            correo: {
+                type: 'string',
+                description: 'Correo del Usuario',
+            },
+            imagen: {
+                type: 'string',
+                description: 'Imagen del Usuario',
+            },
+            contraseña: {
+                type: 'string',
+                description: 'Contraseña del usuario',
+            },
+        },
+        required: [
+            'nombre_usuario',
+            'correo',
+            'contraseña'
+        ],
+        example: {
+            nombre_usuario: 'Jose Daniel Vargas',
+            correo: 'jose@gmail.com',
+            contraseña: 'jose12345'
+        },
+        },
+        Rol: {
+        type: 'object',
+        properties: {
+            nombre_rol: {
+            type: 'string',
+            description: 'Nombre de los roles de un Usuario',
+            },
+        },
+        required: ['nombre_rol'],
+        example: {
+            nombre_rol: 'Empleado',
+        },
+        },
         Areas: {
         type: 'object',
         properties: {
@@ -234,10 +460,80 @@ swaggerDefinition: {
             area_proyecto: "65240515378a3ba512a6db3c"
         },
         },
+        Ayuda: {
+        type: 'object',
+        properties: {
+            titulo_ayuda: {
+            type: 'String',
+            description: 'Titulo de la ayuda solicitada',
+            },
+            descripcion_ayuda: {
+            type: 'String',
+            description: 'Descripcion de la ayuda solicitada',
+            },
+            fecha_creacion_ayuda: {
+            type: 'Date',
+            description: 'Fecha en la que se solicita la ayuda',
+            },
+            id_usuario_ayuda: {
+            type: 'ObjectId',
+            description: 'Id del usuario que esta solicitando la ayuda',
+            },
+        },
+        required: [
+            'titulo_ayuda',
+            'descripcion_ayuda',
+        ],
+        example: {
+            titulo_ayuda: "Modificacion del proyecto",
+            descripcion_ayuda: "Quiero modificar las bases de mi proyecto pero no puedo hacerlo",
+            fecha_creacion_ayuda: "2023-09-10",
+            id_usuario_ayuda: "652403f7378a3ba512a6db2d"
+        },
+        },
+        Reporte: {
+            type: 'object',
+            properties: {
+                titulo_reporte: {
+                type: 'String',
+                description: 'Titulo del reporte en relacion al indicador del proyecto',
+                },
+                descripcion_reporte: {
+                type: 'String',
+                description: 'Descripcion del reporte en relacion al proyecto',
+                },
+                fecha_creacion_reporte: {
+                type: 'Date',
+                description: 'Fecha en la que se hizo el reporte',
+                },
+                id_usuario_reporte: {
+                type: 'ObjectId',
+                description: 'Id del usuario que esta haciendo el reporte',
+                },
+            },
+            required: [
+                'titulo_reporte',
+                'descripcion_reporte',
+            ],
+            example: {
+                titulo_reporte: "Proyecto Hackeado",
+                descripcion_reporte: "Un externo ingreso en mi proyecto sin mi conocimiento y altero los datos que se encontraban dentro del proyecto",
+                fecha_creacion_reporte: "2023-09-09",
+                id_usuario_reporte: "652403f7378a3ba512a6db2d"
+            },
+            },
     },
     },
+/*     securitySchemes: {
+        bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+        },
+    }, */
+    
 }, // Fin de la sección swaggerDefinition
-apis: ['./routes/*.js'], // Otras rutas que deseas documentar
+apis: ['./routes/*.js'], 
 };
   
 

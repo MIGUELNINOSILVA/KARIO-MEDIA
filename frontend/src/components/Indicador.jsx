@@ -19,12 +19,6 @@ export const Indicador = ({ user }) => {
     transition,
   };
 
-  // Establece estilos en línea para aplicar colores
-  const cellStyle = {
-    backgroundColor: "white", // Cambia esto al color de fondo deseado
-    color: "black", // Cambia esto al color de texto deseado
-  };
-
   let valor = 55;
 
   return (
@@ -33,16 +27,30 @@ export const Indicador = ({ user }) => {
       {...attributes}
       {...listeners}
       style={style}
-      className="td-indicador"
+      className="tr-indicador"
     >
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>
+      <td className="td-element">
+        <div className="ola">{user.name}</div>
+      </td>
+      <td className="td-element">
+        <div>{user.name}</div>
+      </td>
+      <td className="td-element">
+        <div>{user.name}</div>
+      </td>
+      <td className="td-element">
+        <div>{user.name}</div>
+      </td>
+      <td className="td-element">
+        <div>{user.name}</div>
+      </td>
+      <td className="td-element">
+        <div>{user.name}</div>
+      </td>
+      <td className="td-element">
+        <div>{user.name}</div>
+      </td>
+      <td className="td-element">
         <ChakraProvider>
           <Box>
             <CircularProgress
@@ -64,10 +72,10 @@ export const Indicador = ({ user }) => {
           </Box>
         </ChakraProvider>
       </td>
-      <td style={cellStyle}>{user.name}</td>
-      <td style={cellStyle}>
-        <MenuIcon />
+      <td className="td-element">
+        <div>{user.name}</div>
       </td>
+        <MenuIcon />
     </tr>
   );
 };

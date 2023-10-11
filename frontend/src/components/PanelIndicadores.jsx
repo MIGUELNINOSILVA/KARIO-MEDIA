@@ -8,6 +8,8 @@ import {
 } from "@dnd-kit/sortable";
 import { Indicador } from "./Indicador";
 
+import './../assets/css/PanelIndicadores.css'
+
 export const PanelIndicadores = () => {
   const [people, setPeople] = useState([
     {
@@ -58,13 +60,17 @@ export const PanelIndicadores = () => {
               <th>Área</th>
             </tr>
           </thead>
+          <br />
           <tbody>
             <SortableContext
               items={people}
               strategy={verticalListSortingStrategy}
             >
               {people.map((user) => (
+                <>
                 <Indicador user={user} key={user.id} />
+                <br />
+                </>
               ))}
             </SortableContext>
           </tbody>

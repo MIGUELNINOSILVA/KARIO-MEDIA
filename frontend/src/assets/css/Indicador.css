@@ -1,15 +1,19 @@
-/* .indicador-box{
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid #000;
-  margin: 1rem;
-  padding: .5rem;
-  border-radius: 1.5rem;
-} */
+td {
+  /* border-top: 1px solid #000000 !important;
+  border-bottom: 1px solid #000000 !important; */
+  color: #000 !important;
+  background-color: #dadada !important;
+  padding: 1rem !important;
+}
 
-.td-indicador {
-  border: 1px solid #000;
-  margin: 1rem;
-  padding: 0.5rem;
-  border-radius: 1.5rem;
+td:first-child {
+  /* border-left: 1px solid #000000 !important; */
+  border-bottom-left-radius: 1rem !important;
+  border-top-left-radius: 1rem !important;
+}
+
+td:nth-child(9) {
+  border-bottom-right-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  /* border-right: 1px solid #000000 !important; */
 }

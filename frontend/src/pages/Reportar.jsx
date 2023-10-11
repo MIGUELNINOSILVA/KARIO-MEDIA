@@ -1,14 +1,16 @@
 import React from 'react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import Reportes from '../components/Reportes.jsx'
+import '../assets/css/reportes.css'
+import { Container } from '@mui/material'
 
 const Reportar = () => {
   return (
     <>
       <ResponsiveAppBar/>
-      <div className="contenedorReportes">
+      <Container maxWidth="lg" className='contenedorReportes'>
         <Reportes/>
-      </div>
+      </Container>
     </>
   )
 }

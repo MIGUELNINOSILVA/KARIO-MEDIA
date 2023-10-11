@@ -10,3 +10,4 @@ export const getProyectos = async (req, res) => {
     })
   }
 }
+

@@ -1,6 +1,6 @@
 import Area from "../models/Area.js";
 
-export const getAreas = async (req, res) => {
+const getAreas = async (req, res) => {
   try {
     const area = await Area.find();
     res.json(area);
@@ -8,3 +8,5 @@ export const getAreas = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 }
+
+export default getAreas

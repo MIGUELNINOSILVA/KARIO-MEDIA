@@ -2,7 +2,7 @@ import Ayuda from "../models/Ayuda.js";
 
 export const getAyudas = async (req, res) => {
   try {
-    const ayuda = await Ayuda.find();
+    const ayuda = await Ayuda.find().populate("id_usuario_ayuda");;
     res.json(ayuda);
   } catch (error) {
     res.status(500).json({

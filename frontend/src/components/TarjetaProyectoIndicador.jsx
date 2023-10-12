@@ -1,5 +1,6 @@
 import { Box, ChakraProvider, CircularProgress, CircularProgressLabel, MenuIcon } from "@chakra-ui/react";
 import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { Menu } from "@mui/material";
 import React from "react";
 
@@ -9,7 +10,7 @@ const TarjetaProyectoIndicador = ({ proyecto }) => {
       id: proyecto.indicador,
     });
     const style = {
-      transform: transform ? `translate3d(0, ${transform.y}px, 0)` : undefined,
+      transform: CSS.Transform.toString(transform),
       transition,
     };
   

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import Reportes from '../components/Reportes.jsx'

@@ -2,7 +2,7 @@ import Proyecto from "../models/Proyecto.js";
 
 export const getProyectos = async (req, res) => {
   try {
-    const proyectos = await Proyecto.find();
+    const proyectos = await Proyecto.find().populate("categoria_proyecto").populate("area_proyecto").populate("id_usuario_proyecto").populate("lider_proyecto").populate("formula_proyecto");
     res.json(proyectos);
   } catch (error) {
     res.status(500).json({

@@ -17,6 +17,7 @@ export const App = () => {
   const { userLoginData } = useContext(UsuarioContext);
   console.log(userLoginData);
   if(!userLoginData){
+    
     localStorage.removeItem("user-data");
     localStorage.removeItem("token");
   }

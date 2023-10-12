@@ -11,11 +11,9 @@ const proyectoSchema = new Schema(
     },
     fecha_inicio_proyecto: {
       type: Date,
-      default: Date.now,
     },
     fecha_terminacion_proyecto: {
       type: Date,
-      default: Date.now,
     },
     lider_proyecto: {
       ref: "Usuario",

@@ -82,3 +82,39 @@ export const deleteProyectoById = async (req, res) => {
     });
   }
 };
+
+export const createProyecto = async (req, res) => {
+  try {
+    const {
+      indicador_proyecto,
+      descripcion_proyecto,
+      fecha_inicio_proyecto,
+      fecha_terminacion_proyecto,
+      lider_proyecto,
+      id_usuario_proyecto,
+      formula_proyecto,
+      categoria_proyecto,
+      area_proyecto,
+    } = req.body;
+
+    const newProyecto = new Proyecto({
+      indicador_proyecto,
+      descripcion_proyecto,
+      fecha_inicio_proyecto,
+      fecha_terminacion_proyecto,
+      lider_proyecto,
+      id_usuario_proyecto,
+      formula_proyecto,
+      categoria_proyecto,
+      area_proyecto,
+    });
+
+    const proyectoSaved = await newProyecto.save();
+
+    res.status(201).json(proyectoSaved);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error",
+    });
+  }
+}

@@ -1,0 +1,23 @@
+td {
+  /* border-top: 1px solid #000000 !important;
+  border-bottom: 1px solid #000000 !important; */
+  color: #000 !important;
+  background-color: #c0bfbf !important;
+  padding: 1rem !important;
+}
+
+td:first-child {
+  /* border-left: 1px solid #000000 !important; */
+  border-bottom-left-radius: 1rem !important;
+  border-top-left-radius: 1rem !important;
+}
+
+td:nth-child(9) {
+  border-bottom-right-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  /* border-right: 1px solid #000000 !important; */
+}
+
+.menu-icon{
+  font-size: 4rem !important;
+}

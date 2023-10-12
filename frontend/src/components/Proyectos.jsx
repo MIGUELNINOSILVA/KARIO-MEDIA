@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModalProyectos from "./ModalProyectos";
 import { IconButton } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -15,6 +15,7 @@ import {
   CircularProgressLabel,
 } from "@chakra-ui/react";
 import TarjetaProyectoIndicador from "./TarjetaProyectoIndicador";
+import { ProyectoContext } from "../context/ProyectoContext";
 
 const listaProyectos = [
   {
@@ -31,14 +32,13 @@ const listaProyectos = [
 ];
 
 const Proyectos = () => {
+  const {proyectos} = useContext(ProyectoContext);
   const [listado, setListado] = useState([]);
 
+  // Asigna el valor delos proyectos a la variable listado
   useEffect(() => {
-    const listaGuardada = JSON.parse(localStorage.getItem("listaProyectos"));
-    if (listaGuardada) {
-      setListado(listaGuardada);
-    }
-  }, []);
+    setListado(proyectos);
+  }, [proyectos]);
 
   const nuevoElemento = (data) => {
     const nuevoProyecto = [...listado, data];
@@ -51,8 +51,6 @@ const Proyectos = () => {
     setListado((listado) => {
       const oldIndex = listado.findIndex((lista) => lista.indicador === active.id);
       const newIndex = listado.findIndex((lista) => lista.indicador === over.id);
-      console.log("inicio", oldIndex);
-      console.log("fin", newIndex);
       return arrayMove(listado, oldIndex, newIndex);
     });
   };

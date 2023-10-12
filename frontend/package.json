@@ -20,6 +20,7 @@
     "@mui/material": "^5.14.12",
     "@mui/styled-engine-sc": "^5.14.12",
     "bootstrap": "^5.3.2",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.0",
     "react-dom": "^18.2.0",

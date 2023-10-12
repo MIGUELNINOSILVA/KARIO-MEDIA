@@ -12,9 +12,9 @@ import {
 import { isAdminOrEmpleado, verifyToken } from "../middlewares/authJwt.js";
 
 router.get("/", getReportes);
-router.post("/", [verifyToken, isAdminOrEmpleado],createReporte);
+router.post("/post", [verifyToken, isAdminOrEmpleado],createReporte);
 router.get("/:id", getReporteById);
-router.patch("/:id", [verifyToken, isAdminOrEmpleado], updateReporteById);
-router.delete("/:id", [verifyToken, isAdminOrEmpleado], deleteReporteById);
+router.patch("/patch/:id", [verifyToken, isAdminOrEmpleado], updateReporteById);
+router.delete("/del/:id", [verifyToken, isAdminOrEmpleado], deleteReporteById);
 
 export default router;

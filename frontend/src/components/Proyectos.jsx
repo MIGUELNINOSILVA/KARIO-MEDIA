@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ModalProyectos from "./ModalProyectos";
 import { IconButton } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
   SortableContext,
@@ -69,6 +70,7 @@ const Proyectos = () => {
         <h5>Cumplimiento</h5>
         <h5>Área</h5>
       </div>
+      
       <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext items={listado} strategy={verticalListSortingStrategy}>
           {listado.map((proyecto, index) => (

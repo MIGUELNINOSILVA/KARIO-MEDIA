@@ -196,7 +196,8 @@ function ResponsiveAppBar({ miFuncion }) {
                   <Avatar
                     alt="Remy Sharp"
                     src={user.user.imagen}
-                    sx={{ width: 45, height: 45 }}
+                    sx={{ width: 45
+                      , height: 45 }}
                     onClick={handleMenu}
                   />
                 )}

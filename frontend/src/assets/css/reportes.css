@@ -1,0 +1,50 @@
+:root{
+    --color-naranja: #fc7124;
+}
+
+
+.papaReportes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reporteTarjeta{
+    max-width: 100%;
+    width: 350px;
+    min-height: 155px;
+    border-radius: 31px;
+    background: #FFF;
+    box-shadow: -5px -5px 10px 6px rgba(0, 0, 0, 0.10);
+    padding: 20px;
+    margin: 10px;
+    
+}
+
+.usuarioReporte{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.infoReporte{
+    display: flex;
+    flex-direction: column;
+    height: calc(70%);
+}
+
+.infoReporte label{
+    color: var(--color-naranja);
+    font-weight: bold;
+    text-align: center;
+}
+
+.infoReporte div {
+    border: none;
+    width: 100%;
+    min-height: 50px;  
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

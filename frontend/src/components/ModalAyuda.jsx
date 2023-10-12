@@ -5,9 +5,6 @@ import {useForm} from 'react-hook-form';
 const ModalAyuda = ({nuevoElemento,ListaDeAyudas}) => {
     const {register, handleSubmit, formState:{errors},reset} = useForm();
 
-    console.log(errors);
-    console.log(ListaDeAyudas);
-
     const [modal, setModal] = useState(false);
     const abrirCerrarModal = () =>{
         setModal(!modal )

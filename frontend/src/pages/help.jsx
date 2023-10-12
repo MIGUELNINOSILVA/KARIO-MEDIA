@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import ResponsiveAppBar from './../components/ResponsiveAppBar'
+import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import Ayudas from '../components/Ayudas'
 import './../assets/css/help.css'
 import '../assets/css/cargar.css'
 import loadingImage from '../assets/img/KARIO_LOGO.png'
 
-const help = () => {
+const Help = () => {
 
   const url = 'http://localhost:4000/api/reporte'
 
@@ -69,4 +69,4 @@ const help = () => {
   )
 }
 
-export default help
+export default Help;

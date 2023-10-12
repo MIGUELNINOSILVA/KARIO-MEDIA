@@ -1,5 +1,5 @@
 .cargando{
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgba(0, 0, 0, 0.774);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,7 +8,7 @@
 }
 
 .cargando img{
-    width: 600px;
+    width: 400px;
     height: auto;
     animation: animacion 1s linear;
 }

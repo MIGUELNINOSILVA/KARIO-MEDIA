@@ -10,6 +10,8 @@ const listaReportes = [
 ]
 const Reportes = ({setMiFuncion}) => {
 
+  const url = 'http://localhost:4000/api/reporte'
+
   const [listado, setListado] = useState([]);
 
   const [reportes, setReportes] = useState([])

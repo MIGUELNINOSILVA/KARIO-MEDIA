@@ -91,6 +91,7 @@ function ResponsiveAppBar() {
             <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>
             <NavLink to='/reportes'style={{color:'black'}}><Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}>Reportar</Button></NavLink>
             <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button></NavLink>
+            <Button>prueba</Button>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: {textAlign:'end '}}}>

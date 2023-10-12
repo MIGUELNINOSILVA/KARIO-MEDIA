@@ -5,11 +5,12 @@ import './../assets/css/help.css'
 
 
 const help = () => {
+
   return (
     <div>
        <ResponsiveAppBar/>
        
-       <div className="contenedorAyudas">
+       <div className="contenedorAyudas" >
           <Ayudas/>
        </div>
     </div>

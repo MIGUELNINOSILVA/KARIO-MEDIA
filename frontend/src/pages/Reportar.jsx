@@ -42,7 +42,7 @@ const Reportar = () => {
         setLoading(false); 
       });
   }, []);
-
+  const [miFuncion, setMiFuncion] = useState(null)
 
   return (
     <>
@@ -52,9 +52,10 @@ const Reportar = () => {
       </div>     
         ) : (
             <>
-                  <ResponsiveAppBar/>
+            
+                  <ResponsiveAppBar miFuncion={miFuncion}/>
                   <Container maxWidth="lg" className='contenedorReportes'>
-                    <Reportes/>
+                    <Reportes setMiFuncion={setMiFuncion}/>
                   </Container>
             </>
         )}

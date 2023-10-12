@@ -30,7 +30,7 @@ export const ListaDeAyudas = [
     }
 ]
 
-const Ayudas = () => {
+const Ayudas = ({setMiFuncion}) => {
 
     const url = 'http://localhost:4000/api/ayuda'
 
@@ -79,7 +79,7 @@ const Ayudas = () => {
 
     return (
         <>
-        <ModalAyuda nuevoElemento={nuevoElemento} ListaDeAyudas={listado} />
+        <ModalAyuda nuevoElemento={nuevoElemento} ListaDeAyudas={listado} setMiFuncion={setMiFuncion}/>
             {ayudas.map((ayuda, index) => (
                 <div key={ayuda._id} className='ayudaTarjeta'>
                     <div className='usuarioAyuda'>

@@ -50,7 +50,7 @@ const getReportes = async () => {
 
   return (
     <>
-      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado}/>
+      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado} setMiFuncion={setMiFuncion}/>
       <div className="papaReportes">
       {reportes.map((reporte,index)=>(
         <div key={reporte._id} className='reporteTarjeta'>

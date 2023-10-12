@@ -12,6 +12,7 @@ const Help = () => {
   const [isLoading, setLoading] = useState(true);
   const [reportes, setReportes] = useState([])
 
+  const [miFuncion, setMiFuncion] = useState(null)
 
   const getReportes = async () => {
     try {
@@ -54,10 +55,9 @@ const Help = () => {
         ) : (
             <>
             <div>
-              <ResponsiveAppBar/>
-              
+              <ResponsiveAppBar miFuncion={miFuncion}/>
               <div className="contenedorAyudas">
-                  <Ayudas/>
+                  <Ayudas setMiFuncion={setMiFuncion}/>
               </div>
             </div>
             </>

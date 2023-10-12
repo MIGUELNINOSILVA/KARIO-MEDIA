@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/img/KARIO_LOGO.png";
 import { UsuarioContext } from "../context/UsuarioContext";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   // Variables para el formulario
@@ -85,8 +86,8 @@ const Register = () => {
           </form>
           <div className="texto-final">
             <p>
-              Tienes Problemas para ingresar? Por favor contactarse con
-              asistencia técnica{" "}
+            Ya tienes una cuenta? {' '}
+              <Link to="/login">Ingresa</Link>
             </p>
           </div>
         </div>

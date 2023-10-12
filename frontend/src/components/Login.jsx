@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/img/KARIO_LOGO.png";
 import { useContext, useState } from "react";
 import { UsuarioContext } from "./../context/UsuarioContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   // Variables para el formulario
@@ -13,7 +14,7 @@ const Login = () => {
   const { fetchLogin } = useContext(UsuarioContext);
 
   //Funcion para enviar los datos del formulario
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("enviando");
     const dataLogin = {
@@ -21,7 +22,6 @@ const Login = () => {
       contraseña: contrasena,
     };
     await fetchLogin(usuario, contrasena);
-
   };
 
   return (
@@ -73,8 +73,8 @@ const Login = () => {
           </form>
           <div className="texto-final">
             <p>
-              Tienes Problemas para ingresar? Por favor contactarse con
-              asistencia técnica{" "}
+              No tienes una cuenta? Crea una{" "}
+              <Link to="/register">Registrate</Link>
             </p>
           </div>
         </div>

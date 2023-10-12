@@ -67,3 +67,16 @@ export const updateProyectoById = async (req, res) => {
     });
   }
 };
+
+export const deleteProyectoById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const proyecto = await Proyecto.findByIdAndDelete(id);
+    if(!proyecto) return res.status(404).json({message: "Proyecto no encontrado"});
+    res.status(200).json({message: "Proyecto eliminado con éxito"});
+  } catch (error) {
+    res.status(500).json({
+      message: "Error",
+    });
+  }
+};

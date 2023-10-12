@@ -12,9 +12,9 @@ import {
 import { isAdminOrEmpleado, verifyToken } from "../middlewares/authJwt.js";
 
 router.get("/", getAyudas);
-router.post("/", [verifyToken, isAdminOrEmpleado], createAyuda);
+router.post("/post", [verifyToken, isAdminOrEmpleado], createAyuda);
 router.get("/:id", getAyudaById);
-router.patch("/:id", [verifyToken, isAdminOrEmpleado], updateAyudaById);
-router.delete("/:id", [verifyToken, isAdminOrEmpleado], deleteAyudaById);
+router.patch("/patch/:id", [verifyToken, isAdminOrEmpleado], updateAyudaById);
+router.delete("/del/:id", [verifyToken, isAdminOrEmpleado], deleteAyudaById);
 
 export default router;

@@ -19,6 +19,9 @@ const ayudaSchema = new Schema({
     ref: "Usuario",
     type: Schema.Types.ObjectId,
   },
+},{
+  timestamps: true,
+  versionKey: false,
 });
 
 export default model("Ayuda", ayudaSchema);

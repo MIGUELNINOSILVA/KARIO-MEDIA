@@ -56,7 +56,7 @@ function ResponsiveAppBar() {
             >
               <MenuIcon />
             </IconButton>
-            <img src={Logo} alt="Logo..." style={{height:'30px'}}/>
+            <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -78,9 +78,9 @@ function ResponsiveAppBar() {
             <Button color="inherit" startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}></Button>
             <Button color="inherit" startIcon={<RefreshIcon style={{color:'#FC7124'}}/>}></Button>
             <Button color="inherit" startIcon={<DeleteForeverIcon style={{color:'#FC7124'}}/>}></Button>
-            <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>
             <NavLink to='/reportes'style={{color:'black'}}><Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}></Button></NavLink>
-            <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}></Button></NavLink>
+            <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>
+            </Button></NavLink>
             </Menu>
           </Box>
           

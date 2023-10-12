@@ -43,3 +43,17 @@
     text-align: center;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .contenedorProyectos {
+        flex-direction: column; 
+    }
+    .proyectoTarjeta {
+        flex-direction: column; 
+    }
+    .indicadoresDeTabla{
+        display: none;
+    }
+
+    
+}

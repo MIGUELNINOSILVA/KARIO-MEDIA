@@ -9,6 +9,8 @@ const UsuarioProvider = ({ children }) => {
   const [contrasena, setContrasena] = useState("");
   const [token, setToken] = useState("");
   const [userLogin, setUserLogin] = useLocalStorage("user-token", "");
+  const [userLoginData, setuserLoginData] = useLocalStorage("user-data", "");
+  const [datosUsuario, setDatosUsuario] = useState({});
   //Re navegar
   const navigate = useNavigate();
 
@@ -24,10 +26,11 @@ const UsuarioProvider = ({ children }) => {
       });
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        setuserLoginData(data);
+        setDatosUsuario(data);
         setToken(data.tokenuser);
         setUserLogin(data.tokenuser);
-        navigate("/kario");
+        navigate("/bienvenido");
       }
     } catch (error) {
       console.log(error);
@@ -41,14 +44,19 @@ const UsuarioProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ nombre_usuario, correo: email, contraseña: password }),
+        body: JSON.stringify({
+          nombre_usuario,
+          correo: email,
+          contraseña: password,
+        }),
       });
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        setuserLoginData(data);
+        setDatosUsuario(data);
         setToken(data.tokenuser);
         setUserLogin(data.tokenuser);
-        navigate("/kario");
+        navigate("/bienvenido");
       }
     } catch (error) {
       console.log(error);
@@ -63,10 +71,11 @@ const UsuarioProvider = ({ children }) => {
     contrasena,
     token,
     userLogin,
+    datosUsuario,
     setUsuario,
     setContrasena,
     fetchLogin,
-    fetchRegister
+    fetchRegister,
   };
 
   return (

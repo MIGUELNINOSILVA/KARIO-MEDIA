@@ -9,6 +9,15 @@ export const getUsuarios = async(req, res) => {
   }
 }
 
+export const getUsuario = async(req, res) => {
+  try {
+    const usuario = await Usuario.findById(req.params.id);
+    res.status(200).json(usuario);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
 export const updateUsuario = async (req, res) => {
   try {
     const usuario = await Usuario.findById(req.params.id);

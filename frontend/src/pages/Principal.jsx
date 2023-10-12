@@ -8,6 +8,7 @@ const Principal = () => {
   return (
     <>
         <ResponsiveAppBar/>
+        
         <div className="contenedorProyectos">
         <PanelIndicadores />
           <Proyectos/>

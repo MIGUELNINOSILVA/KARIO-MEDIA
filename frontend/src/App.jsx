@@ -10,31 +10,35 @@ import "./assets/css/style.css";
 import Reportar from "./pages/Reportar";
 import ProyectoProvider from "./context/ProyectoProvider";
 import UsuarioProvider from "./context/UsuarioProvider";
+import { useContext } from "react";
+import { UsuarioContext } from "./context/UsuarioContext";
 
 export const App = () => {
-  const user = JSON.parse(localStorage.getItem('user-data'));
+  const { userLoginData } = useContext(UsuarioContext);
+  console.log(userLoginData);
+  if(!userLoginData){
+    localStorage.removeItem("user-data");
+    localStorage.removeItem("token");
+  }
+  const user = JSON.parse(localStorage.getItem("user-data"));
 
   return (
     <>
-      <BrowserRouter>
-        <UsuarioProvider>
-          <ProyectoProvider>
-            <Routes>
-              <Route index element={<FondoLogin />} path="/login" />
-              <Route index element={<FondoRegister />} path="/register" />
-              {user ? (
-                <>
-                  <Route index element={<FondoBienvenido />} path="/bienvenido" />
-                  <Route element={<Principal />} path="/Kario" />
-                  <Route element={<Reportar />} path="/reportes" />
-                  <Route element={<help />} path="/help" />
-                </>
-              ) : null}
-              <Route element={<Error404 />} path="*" />
-            </Routes>
-          </ProyectoProvider>
-        </UsuarioProvider>
-      </BrowserRouter>
+        <ProyectoProvider>
+          <Routes>
+            <Route index element={<FondoLogin />} path="/login" />
+            <Route index element={<FondoRegister />} path="/register" />
+            {user ? (
+              <>
+                <Route index element={<FondoBienvenido />} path="/bienvenido" />
+                <Route element={<Principal />} path="/Kario" />
+                <Route element={<Reportar />} path="/reportes" />
+                <Route element={<help />} path="/help" />
+              </>
+            ) : null}
+            <Route element={<Error404 />} path="*" />
+          </Routes>
+        </ProyectoProvider>
     </>
   );
 };

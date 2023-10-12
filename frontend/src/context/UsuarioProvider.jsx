@@ -72,6 +72,7 @@ const UsuarioProvider = ({ children }) => {
     token,
     userLogin,
     datosUsuario,
+    userLoginData,
     setUsuario,
     setContrasena,
     fetchLogin,

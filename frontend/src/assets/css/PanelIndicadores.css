@@ -1,0 +1,23 @@
+.titles-panel{
+  display: flex; 
+  justify-content: space-around;
+}
+
+.contenedor-principal-panel{
+  display: flex;
+  flex-direction: column;
+  gap: .6em 
+}
+
+.tr-indicador{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 3rem;
+}
+
+.content-box-indicador {
+  text-align: center;
+}

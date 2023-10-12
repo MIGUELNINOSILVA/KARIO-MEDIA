@@ -128,7 +128,7 @@ function ResponsiveAppBar({miFuncion}) {
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' , justifyContent:'center',gap:100 } }}>
-            <Button color="inherit" startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}>Añadir</Button>
+            <Button color="inherit" onClick={miFuncion} startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}>Añadir</Button>
             <Button color="inherit" startIcon={<RefreshIcon style={{color:'#FC7124'}}/>}>Refrescar</Button>
             <Button color="inherit" startIcon={<DeleteForeverIcon style={{color:'#FC7124'}}/>}>Eliminar</Button>
             <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>

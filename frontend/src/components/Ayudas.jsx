@@ -54,10 +54,7 @@ const Ayudas = ({setMiFuncion}) => {
 
     return (
         <>
-
         <ModalAyuda nuevoElemento={nuevoElemento} ListaDeAyudas={listado} setMiFuncion={setMiFuncion} />
-            
-            
             
             
             {listado.map((ayuda, index) => (

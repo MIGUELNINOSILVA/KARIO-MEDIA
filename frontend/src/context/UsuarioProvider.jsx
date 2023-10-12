@@ -34,6 +34,27 @@ const UsuarioProvider = ({ children }) => {
     }
   };
 
+  const fetchRegister = async (nombre_usuario, email, password) => {
+    try {
+      const response = await fetch("http://localhost:4000/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nombre_usuario, correo: email, contraseña: password }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setToken(data.tokenuser);
+        setUserLogin(data.tokenuser);
+        navigate("/kario");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // Hooks
 
   // Retorno
@@ -45,6 +66,7 @@ const UsuarioProvider = ({ children }) => {
     setUsuario,
     setContrasena,
     fetchLogin,
+    fetchRegister
   };
 
   return (

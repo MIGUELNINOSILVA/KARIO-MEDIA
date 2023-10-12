@@ -71,34 +71,33 @@ A continuación, se describen las operaciones más comunes que puedes realizar e
 - Proporciona un título una descripción detallada del informe
 - Haz clic en "Enviar" para registrar el reporte.
 
-Eliminación de Proyectos (Solo para Administradores)
+### Eliminación de Proyectos (Solo para Administradores)
 
-    En la página de eliminación de proyectos, selecciona los proyectos que deseas eliminar marcando las casillas de verificación.
-    Haz clic en "Eliminar" para eliminar los proyectos seleccionados.
+- En la página de eliminación de proyectos, selecciona los proyectos que deseas eliminar marcando las casillas de verificación.
+- Haz clic en "Eliminar" para eliminar los proyectos seleccionados.
 
-Agregar un Nuevo Proyecto a través del Modal (Solo para Administradores)
+### Agregar un Nuevo Proyecto a través del Modal (Solo para Administradores)
 
-    En la página principal, selecciona "Agregar Proyecto" en el panel de navegación.
-    Completa los detalles del nuevo proyecto en el modal, como nombre, descripción y fechas.
-    Haz clic en "Guardar" para agregar el proyecto.
+- En la página principal, selecciona "Agregar Proyecto" en el panel de navegación.
+- Completa los detalles del nuevo proyecto en el modal, como nombre, descripción, fechas, etc.
+- Haz clic en "Enviar" para agregar el proyecto.
 
-Mejores Prácticas
+### Mejores Prácticas
 
 Aquí hay algunas mejores prácticas a seguir al utilizar la aplicación:
 
-    Actualiza regularmente el estado de los proyectos y las tareas.
-    Comunica de manera efectiva con los miembros del equipo a través de la plataforma.
-    Utiliza las páginas de solicitudes de ayuda y reportes para documentar problemas y solicitar asistencia.
+- Actualiza regularmente el estado de los proyectos y las tareas.
+- Utiliza las páginas de solicitudes de ayuda y reportes para documentar problemas y solicitar asistencia.
 
-Soporte y Contacto
+### Soporte y Contacto
 
 Si tienes problemas, preguntas o comentarios, no dudes en contactarnos en [dirección de correo electrónico] o [número de teléfono].
 Conclusión
 
-Esperamos que esta documentación te ayude a utilizar la página administrativa de proyectos en equipos de manera efectiva. Si tienes sugerencias para mejorar esta documentación o la aplicación, no dudes en hacérnoslas saber.
+Esperamos que esta documentación te ayude a utilizar la página administrativa de proyectos "Kario Media" en equipos de manera efectiva. Si tienes sugerencias para mejorar esta documentación o la aplicación, no dudes en hacérnoslas saber.
 
-[Nombre de la Empresa/Equipo de Desarrollo]
-[Fecha de la última actualización]
+[Kario Media/Equipo de Desarrollo]
+[11/10/2023]
 
 Esta es una estructura actualizada de documentación para el frontend de una página administrativa de proyectos en equipos, teniendo en cuenta las nuevas características y la restricción de agregar nuevos proyectos solo para administradores. Asegúrate de personalizarla y expandirla según las características y necesidades específicas de tu aplicación.
 

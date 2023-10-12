@@ -1,12 +1,20 @@
 
 import '../assets/css/bienvenido.css'
-import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../assets/img/KARIO_LOGO.png'
 import perfil from '../assets/img/c74645dae512c48e07163cd68629a286.jpg'
+import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 const Login = () => {
+  // Variables para los datos a mostrar
+  const user = JSON.parse(localStorage.getItem('user-data'));
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.href = "/kario";
+    }, 2000);
+  }, []);
   return (
     <>
       <div className='contenido-login3'>
@@ -20,8 +28,8 @@ const Login = () => {
               <img src={perfil} alt=""/>
             </div>
             <div className='texto-final3'>
-                <h1>Jose Daniel Vargas</h1>
-              <p>Usuario Administrador</p>
+                <h1>{user.user.nombre_usuario}</h1>
+              <p>Usuario {user.user.rol[0].nombre_rol}</p>
             </div>
         </div>
       </div>

@@ -11,16 +11,18 @@ const listaReportes = [
 const Reportes = ({setMiFuncion}) => {
 
   const url = 'http://localhost:4000/api/reporte'
+  const urlPost = 'http://localhost:4000/api/reporte/post'
 
   const [listado, setListado] = useState([]);
 
   const [reportes, setReportes] = useState([])
   
-  
+  const user = JSON.parse(localStorage.getItem("user-data"));
 
   
 const getReportes = async () => {
     try {
+      
       const respuesta = await fetch(url);
       
       const datos = await respuesta.json();
@@ -34,7 +36,7 @@ const getReportes = async () => {
   
   useEffect(()=>{
     getReportes()
-},[])
+  },[])
 
 
 
@@ -43,16 +45,32 @@ const getReportes = async () => {
     listaGuardada ? setListado(listaGuardada) : setListado(listaReportes);
   },[]);
 
-  const nuevoElemento = (data) =>{
-    const nuevaLista = [...listado,data];
-    console.log(nuevaLista);
-    setListado(nuevaLista);
-    localStorage.setItem('listaReportes',JSON.stringify(nuevaLista));
-  };
+  const postReporte = async (data)=>{
+    try {
+      const token = JSON.parse(localStorage.getItem("user-token"));
+      const response = await fetch(urlPost,{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          "x-access-token": token,
+        },
+        body: JSON.stringify(data)
+      });
+
+      if(response.ok){
+        const nuevoReporte = await response.json();
+        setReportes([...reportes,nuevoReporte])
+      }else{
+        console.error('Error al crear un nuevo componente:',response.status)
+      }
+    } catch (error) {
+      console.error('Error en la solicitud',error)
+    }
+  }
 
   return (
     <>
-      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado} setMiFuncion={setMiFuncion}/>
+      <ModalReportes nuevoElemento={postReporte} listaReportes={listado} setMiFuncion={setMiFuncion} postReporte={postReporte}/>
       <div className="papaReportes">
       {reportes.map((reporte,index)=>(
         <div key={reporte._id} className='reporteTarjeta'>
@@ -61,7 +79,7 @@ const getReportes = async () => {
               <img
                 src={reporte.id_usuario_reporte.imagen}
                 alt="imgUsuario"
-                style={{width:"100px", height:"70px", "border-radius": "40%"}}
+                style={{width:"80px", height:"80px", "border-radius": "50%"}}
               />
             )}
               <h4>{reporte.id_usuario_reporte && reporte.id_usuario_reporte.nombre_usuario

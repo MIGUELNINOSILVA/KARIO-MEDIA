@@ -25,7 +25,7 @@ export const updateUsuario = async (req, res) => {
       rol,
     } = req.body;
 
-    usuario.nombre_usuario = nombre_usuario;
+    usuario.nombre_usuario = nombre_usuario || usuario.nombre_usuario;
     usuario.imagen = imagen || "";
     usuario.correo = correo || usuario.correo;
     if(contraseña){

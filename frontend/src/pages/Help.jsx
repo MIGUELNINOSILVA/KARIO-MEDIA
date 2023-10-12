@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ResponsiveAppBar from './../components/ResponsiveAppBar'
 import Ayudas from '../components/Ayudas'
 import './../assets/css/help.css'
-import { useLocation } from 'react-router-dom'
-
-
 const Help = () => {
 
-  const [miFuncion, setMiFuncion] = useState(null)
+  const [miFuncion, setMiFuncion] = useState(null);
 
   return (
     <div>

@@ -3,7 +3,7 @@ Este README tiene como objetivo proporcionar una descripción general del Sistem
 
 ## Tablas y relaciones
 El sistema utiliza varias tablas para almacenar y gestionar datos clave relacionados con proyectos, usuarios y otras entidades. A continuación, se describen las tablas y sus relaciones:
-![Diagrama relación](./diagrama-entidad-relacion-kario.png)
+![Diagrama relación](./img/diagrama-entidad-relacion-kario.png)
 
 ### Usuario
 - id_usuario (INT): Identificador único de usuario.

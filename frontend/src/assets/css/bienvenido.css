@@ -5,228 +5,73 @@
 }
 
 
-.primer-fondo{
+.primer-fondo3{
     background-image: url(../img/pexels-pixabay-1594002x.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    position: absolute;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
-.segundo-fondo{
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-}
-
-
-.container-login{
+.segundo-fondo3{
+    background-color: #000000d0 !important;
     display: flex;
-    flex-direction:column;
-    position: absolute;
-    background-color: white;
-    top: 20%;
-    left: 25%;
-    bottom: 10%;
-    width: 50%;
-    max-height: 500px;
-    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.container-login3{
+    background-color: #ffffff;
+    border-radius: 26px; 
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    max-height: 720px;
+    margin: 20px 0px 20px 0px !important;
     
 }
 
-.contenido-login{
+.contenido-login3{
     display: flex;
-    flex-direction: column;
-    margin: 5% 15% 5% 15%;
-   
+    flex-direction: column; 
 }
 
-.contenido{
+.contenido3{
     display: flex;
     flex-direction: column;
     text-align: center;
-
+    gap: 20px;
+    margin: 20px 50px 0px 50px;
 }
-.logo{
+.logo3{
     display: flex;
     flex-direction: column;
     align-items: center;
     font-style: normal;
-
 }
 
-.logo > img{
-
-    width: 80px;
-    height: 70px;
+.logo3 > img{
+    width: 70px;
+    height: 60px;
+}
+.logo3 h2{
+    font-size:20px;
 }
 
-.logo h2{
-    font-size: 20px;
+.texto-medio3 h1{ 
+    font-size: 25px;
 }
-
-.texto-medio{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
-}
-
-.texto-medio img{
-    
-    width: 120px;
+.texto-medio3 img{ 
+    width: 140px;
     border-radius: 50%;
 }
 
-
-@media (max-width: 1448px) {
-
-    .container-login{
-        display: flex;
-        flex-direction:column;
-        position: absolute;
-        background-color: white;
-        margin: 3% 0% 3% 0%;
-        top: 20%;
-        max-width: 50%;
-        max-height: 500px;
-        border-radius: 20px;
-        
-    }
-    
-    .contenido-login{
-        display: flex;
-        max-width: 100%;
-        max-height: 100%;
-       /*  margin: 5% 15% 5% 15%; */
-       
-    }
-    
-    .contenido{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    .logo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-style: normal;
-    }
-    
-    .logo > img{
-    
-        width: 110px;
-        height: 100px;
-    }
-
+.texto-final3 h1{
+    font-size: 30px;
 }
 
 
-/* Media query para hacerlo responsive */
-@media (max-width: 968px) {
-    .container-login{
-        position: relative;
-        background-color: white;
-        margin: 15% 0% 15% 0%;
-        max-width: 55%;
-        max-height: 60%;
-        border-radius: 20px;
-        
-    }
-    
-    .contenido-login{
-        display: flex;
-        max-width: 100%;
-        max-height: 100%;
-       /*  margin: 5% 15% 5% 15%; */
-       
-    }
-    
-    .contenido{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    .logo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-style: normal;
-    }
-
-    .logo h2{
-        font-size: 22px;
-    }
-    
-    .logo > img{
-    
-        width: 90px;
-        height: 80px;
-    }
-
-}
-
-
-@media (max-width: 634px) {
-    .container-login{
-        display: flex;
-        flex-direction:column;
-        position: absolute;
-        background-color: white;
-        margin: 0% 0% 0% 0%;
-        top: 20%;
-        bottom: 10%;
-        width: 50%;
-        max-height: 350px;
-        border-radius: 20px;
-        
-    }
-    
-    .contenido-login{
-        display: flex;
-        max-width: 100%;
-        max-height: 100%;
-       /*  margin: 5% 15% 5% 15%; */
-       
-    }
-    
-    .contenido{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-
-    
-    .logo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-style: normal;
-    }
-
-    .logo h2{
-        display: none;
-        font-size: 15px;
-    }
-    
-    .logo > img{
-    
-        width: 60px;
-        height: 50px;
-    }
-
-    .texto-final h1{
-        font-size: 18px;
-
-    }
-
-    
-}

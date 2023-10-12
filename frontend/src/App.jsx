@@ -19,7 +19,7 @@ export const App = () => {
   if(!userLoginData){
     
     localStorage.removeItem("user-data");
-    localStorage.removeItem("token");
+    localStorage.removeItem("user-token");
   }
   const user = JSON.parse(localStorage.getItem("user-data"));
 

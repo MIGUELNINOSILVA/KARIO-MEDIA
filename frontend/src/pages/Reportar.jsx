@@ -7,40 +7,16 @@ import '../assets/css/cargar.css'
 import loadingImage from '../assets/img/KARIO_LOGO.png'
 
 const Reportar = () => {
-  const url = 'http://localhost:4000/api/reporte'
+ 
 
   const [isLoading, setLoading] = useState(true);
-  const [reportes, setReportes] = useState([])
 
 
-  const getReportes = async () => {
-    try {
-      const respuesta = await fetch(url);
-      
-      const datos = await respuesta.json();
-      console.log(datos);
-      setReportes(datos)
-      
-    } catch (error) {
-      console.error('Error en la solicitud:', error);
-    }
-  }
-  
-  useEffect(()=>{
-    getReportes()
-},[])
+
   useEffect(() => {
-    getReportes()
-      .then(() => {
-        setTimeout(() => {
-          setLoading(false); 
-        }, 2000); 
-      })
-      .catch((error) => {
-        console.error('Error en la solicitud:', error);
-        show_alerta('Error en la solicitud');
-        setLoading(false); 
-      });
+    setTimeout(() => {
+      setLoading(false); // Simulación de carga completa después de 2000 ms (2 segundos)
+    }, 2000);
   }, []);
 
 

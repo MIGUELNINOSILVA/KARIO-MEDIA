@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import FondoLogin from "./pages/FondoLogin";
 import Error404 from "./pages/Error404";
 import Principal from "./pages/Principal";
-import help from "./pages/Help";
+
 import FondoRegister from "./pages/FondoRegister";
 import FondoBienvenido from "./pages/FondoBienvenido";
 import "./assets/css/style.css";

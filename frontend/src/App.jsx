@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import FondoLogin from "./pages/FondoLogin";
 import Error404 from "./pages/Error404";
 import Principal from "./pages/Principal";
-import help from "./pages/help";
+import help from "./pages/Help";
 import FondoRegister from "./pages/FondoRegister";
 import FondoBienvenido from "./pages/FondoBienvenido";
 import "./assets/css/style.css";
@@ -12,6 +12,7 @@ import ProyectoProvider from "./context/ProyectoProvider";
 import UsuarioProvider from "./context/UsuarioProvider";
 import { useContext } from "react";
 import { UsuarioContext } from "./context/UsuarioContext";
+import Help from "./pages/Help";
 
 export const App = () => {
   const { userLoginData } = useContext(UsuarioContext);
@@ -34,7 +35,7 @@ export const App = () => {
                 <Route index element={<FondoBienvenido />} path="/bienvenido" />
                 <Route element={<Principal />} path="/Kario" />
                 <Route element={<Reportar />} path="/reportes" />
-                <Route element={<help />} path="/help" />
+                <Route element={<Help />} path="/help" />
               </>
             ) : null}
             <Route element={<Error404 />} path="*" />

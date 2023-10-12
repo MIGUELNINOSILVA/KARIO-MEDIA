@@ -1,0 +1,29 @@
+.cargando{
+    background-color: rgba(0, 0, 0, 0.534);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cargando img{
+    width: 600px;
+    height: auto;
+    animation: animacion 1s linear;
+}
+
+@keyframes animacion{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

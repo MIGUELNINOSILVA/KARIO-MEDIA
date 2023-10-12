@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ModalReportes from './ModalReportes'
-import usu from './../assets/img/VectorUsuario.svg'
 import '../assets/css/reportes.css'
 
 const listaReportes = [
@@ -12,6 +11,30 @@ const listaReportes = [
 const Reportes = ({setMiFuncion}) => {
 
   const [listado, setListado] = useState([]);
+
+  const [reportes, setReportes] = useState([])
+  
+  
+
+  
+const getReportes = async () => {
+    try {
+      const respuesta = await fetch(url);
+      
+      const datos = await respuesta.json();
+      console.log(datos);
+      setReportes(datos)
+      
+    } catch (error) {
+      console.error('Error en la solicitud:', error);
+    }
+  }
+  
+  useEffect(()=>{
+    getReportes()
+},[])
+
+
 
   useEffect(()=>{
     const listaGuardada = JSON.parse(localStorage.getItem('listaReportes'));
@@ -27,13 +50,21 @@ const Reportes = ({setMiFuncion}) => {
 
   return (
     <>
-      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado} setMiFuncion={setMiFuncion} />
+      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado}/>
       <div className="papaReportes">
-      {listado.map((reporte,index)=>(
-        <div key={index} className='reporteTarjeta'>
+      {reportes.map((reporte,index)=>(
+        <div key={reporte._id} className='reporteTarjeta'>
             <div className="usuarioReporte">
-              <img src={usu} alt="imgUsuario" />
-              <h4>Usuario X</h4>
+            {reporte.id_usuario_reporte && reporte.id_usuario_reporte.imagen && (
+              <img
+                src={reporte.id_usuario_reporte.imagen}
+                alt="imgUsuario"
+                style={{width:"100px", height:"70px", "border-radius": "40%"}}
+              />
+            )}
+              <h4>{reporte.id_usuario_reporte && reporte.id_usuario_reporte.nombre_usuario
+          ? reporte.id_usuario_reporte.nombre_usuario
+          : 'Usuario Desconocido'}</h4>
             </div>
             <div className="infoReporte">
                 <label htmlFor="descripcionReporte">{reporte.titulo_reporte}</label>

@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Menu } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import React from "react";
 
 const TarjetaProyectoIndicador = ({ proyecto }) => {
@@ -68,9 +68,7 @@ const TarjetaProyectoIndicador = ({ proyecto }) => {
         </p>
         <p>{proyecto.area_proyecto.nombre_area}</p>
       </div>
-      <Menu>
-        <MenuIcon style={{ margin: "5px", fontSize: "35px" }} />
-      </Menu>
+        <MenuIcon style={{margin:'0 5px'}}/>
     </div>
   );
 };

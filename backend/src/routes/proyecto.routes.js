@@ -11,7 +11,7 @@ import {
 import { isAdminOrEmpleado, verifyToken } from "../middlewares/authJwt.js";
 
 router.get("/", getProyectos);
-router.get("/", getProyectoById);
+router.get("/:id", getProyectoById);
 router.patch("/:id", [verifyToken, isAdminOrEmpleado], updateProyectoById);
 router.delete("/:id", [verifyToken, isAdminOrEmpleado], deleteProyectoById);
 

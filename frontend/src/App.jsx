@@ -10,24 +10,31 @@ import FondoBienvenido from "./pages/FondoBienvenido";
 import "./assets/css/style.css";
 import Reportar from "./pages/Reportar";
 import ProyectoProvider from "./context/ProyectoProvider";
+import UsuarioProvider from "./context/UsuarioProvider";
 
 export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <ProyectoProvider>
-          <Routes>
-            <Route exact path="/login" Component={FondoLogin}></Route>
-            <Route exact path="/register" Component={FondoRegister}></Route>
-            <Route exact path="/bienvenido" Component={FondoBienvenido}></Route>
-            {/* <Route exact path='/'  Component={login}></Route> */}
-            <Route exact path="/Kario" Component={Principal}></Route>
-            <Route exact path="/reportes" Component={Reportar}></Route>
-            <Route exact path="/help" Component={help}></Route>
-            <Route exact path="*" Component={Error404}></Route>{" "}
-            {/*//! Esta ruta debe estar de ultimo!! */}
-          </Routes>
-        </ProyectoProvider>
+        <UsuarioProvider>
+          <ProyectoProvider>
+            <Routes>
+              <Route exact path="/login" Component={FondoLogin}></Route>
+              <Route exact path="/register" Component={FondoRegister}></Route>
+              <Route
+                exact
+                path="/bienvenido"
+                Component={FondoBienvenido}
+              ></Route>
+              {/* <Route exact path='/'  Component={login}></Route> */}
+              <Route exact path="/Kario" Component={Principal}></Route>
+              <Route exact path="/reportes" Component={Reportar}></Route>
+              <Route exact path="/help" Component={help}></Route>
+              <Route exact path="*" Component={Error404}></Route>{" "}
+              {/*//! Esta ruta debe estar de ultimo!! */}
+            </Routes>
+          </ProyectoProvider>
+        </UsuarioProvider>
       </BrowserRouter>
     </>
   );

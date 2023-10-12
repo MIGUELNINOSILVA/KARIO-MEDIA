@@ -72,3 +72,26 @@ export const deleteReporteById = async (req, res) => {
     });
   }
 };
+
+export const createReporte = async (req, res) => {
+  try {
+    const {
+      titulo_reporte,
+      descripcion_reporte,
+      fecha_creacion_reporte,
+      id_usuario_reporte,
+    } = req.body;
+    const newReporte = new Reporte({
+      titulo_reporte,
+      descripcion_reporte,
+      fecha_creacion_reporte,
+      id_usuario_reporte,
+    });
+    const reporteSaved = await newReporte.save();
+    res.status(201).json(reporteSaved);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error",
+    });
+  }
+}

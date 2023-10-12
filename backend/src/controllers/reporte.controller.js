@@ -2,7 +2,7 @@ import Reporte from "../models/Reporte.js";
 
 export const getReportes = async (req, res) => {
   try {
-    const reportes = await Reporte.find();
+    const reportes = await Reporte.find().populate("id_usuario_reporte");
     res.json(reportes);
   } catch (error) {
     res.status(500).json({

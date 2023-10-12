@@ -31,33 +31,35 @@ const Reportar = () => {
     getReportes()
 },[])
   useEffect(() => {
-    // Realiza la carga de datos aquí
     getReportes()
       .then(() => {
-        setLoading(false); // Una vez que los datos se cargan, establece isLoading en false
+        setTimeout(() => {
+          setLoading(false); 
+        }, 2000); 
       })
       .catch((error) => {
         console.error('Error en la solicitud:', error);
         show_alerta('Error en la solicitud');
-        setLoading(false); // Asegúrate de cambiar el estado incluso en caso de error
+        setLoading(false); 
       });
   }, []);
 
 
   return (
     <>
-          {isLoading ? (
+      {isLoading ? (
       <div className="cargando" >
           <img src={loadingImage} alt="Loading" className="loading-image" />        
       </div>     
         ) : (
             <>
+                  <ResponsiveAppBar/>
+                  <Container maxWidth="lg" className='contenedorReportes'>
+                    <Reportes/>
+                  </Container>
             </>
         )}
-      <ResponsiveAppBar/>
-      <Container maxWidth="lg" className='contenedorReportes'>
-        <Reportes/>
-      </Container>
+
     </>
   )
 }

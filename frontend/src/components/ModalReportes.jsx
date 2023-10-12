@@ -2,7 +2,7 @@ import { Button, Modal, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form';
 
-const ModalReportes = ({nuevoElemento,listaReportes , setMiFuncion}) => {
+const ModalReportes = ({postReporte,listaReportes , setMiFuncion}) => {
 
   const {register,handleSubmit,formState:{errors},reset} = useForm();
   
@@ -25,7 +25,7 @@ const ModalReportes = ({nuevoElemento,listaReportes , setMiFuncion}) => {
   
   const onSubmit = handleSubmit((data) =>{
       console.log('formulario enviado',data);
-      nuevoElemento(data)
+      postReporte(data)
       resetForm();
   })
   const body = (

@@ -9,7 +9,7 @@ const listaReportes = [
     descripcion_reporte:'asdasd'
   }
 ]
-const Reportes = () => {
+const Reportes = ({setMiFuncion}) => {
 
   const [listado, setListado] = useState([]);
 
@@ -27,7 +27,7 @@ const Reportes = () => {
 
   return (
     <>
-      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado}/>
+      <ModalReportes nuevoElemento={nuevoElemento} listaReportes={listado} setMiFuncion={setMiFuncion} />
       <div className="papaReportes">
       {listado.map((reporte,index)=>(
         <div key={index} className='reporteTarjeta'>

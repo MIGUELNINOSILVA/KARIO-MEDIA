@@ -1,21 +1,26 @@
 import { Button, Modal, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form';
 
-
-const ModalReportes = ({nuevoElemento,listaReportes}) => {
+const ModalReportes = ({nuevoElemento,listaReportes , setMiFuncion}) => {
 
   const {register,handleSubmit,formState:{errors},reset} = useForm();
   
+  useEffect(()=>{
+    if(setMiFuncion){
+        setMiFuncion(()=> abrirCerrarModalReportes);
+    }
+  },[setMiFuncion])
+
 
   const [modal, setModal] = useState(false);
-  const abrirCerrarModal = () =>{
+  const abrirCerrarModalReportes = () =>{
     setModal(!modal);
   }
 
   const resetForm = () =>{
     reset({titulo_reporte:'',descripcion_reporte:''});
-    abrirCerrarModal()
+    abrirCerrarModalReportes()
   }
   
   const onSubmit = handleSubmit((data) =>{
@@ -46,14 +51,13 @@ const ModalReportes = ({nuevoElemento,listaReportes}) => {
         <br />
         <br />
         <Button variant='contained' type='submit' style={{backgroundColor:'#FC7124'}}>Enviar</Button>
-        <Button variant='text' style={{color:'#FC7124'}}>Cancelar</Button>
+        <Button variant='text' style={{color:'#FC7124'}} onClick={()=>abrirCerrarModalReportes()}>Cancelar</Button>
       </form>
     </div>
   )
   return (
     <div style={{display:'flex',flexDirection:'row-reverse', margin:'10px',border:'#FC7124'}}>
-      <Button variant='outlined' style={{color:'#FC7124'}} onClick={()=>abrirCerrarModal()}>Añadir Reporte</Button>
-      <Modal open={modal} onClose={()=>abrirCerrarModal()}>
+      <Modal open={modal} onClose={()=>abrirCerrarModalReportes()}>
         {body}
       </Modal>
     </div>

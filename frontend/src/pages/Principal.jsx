@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import Proyectos from '../components/Proyectos'
 import './../assets/css/proyectos.css'
 
 const Principal = () => {
+  const [miFuncion, setMiFuncion] = useState(null)
   return (
     <>
-        <ResponsiveAppBar/>
+        <ResponsiveAppBar miFuncion={miFuncion}/>
         <div className="contenedorProyectos">
-          <Proyectos/>
+          <Proyectos setMiFuncion={setMiFuncion} />
       </div>
     </>
   )

@@ -18,11 +18,14 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import HelpIcon from '@mui/icons-material/Help';
 import Logo from './../assets/img/KARIO_LOGO.png'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({miFuncion}) {
+
+
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -85,13 +88,12 @@ function ResponsiveAppBar() {
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' , justifyContent:'center',gap:100 } }}>
-            <Button color="inherit" startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}>Añadir</Button>
+            <Button color="inherit" onClick={miFuncion} startIcon={<AddCircleIcon style={{color:'#FC7124'}}/>}>Añadir</Button>
             <Button color="inherit" startIcon={<RefreshIcon style={{color:'#FC7124'}}/>}>Refrescar</Button>
             <Button color="inherit" startIcon={<DeleteForeverIcon style={{color:'#FC7124'}}/>}>Eliminar</Button>
             <NavLink to="/kario"><img src={Logo} alt="Logo..." style={{height:'30px'}}/></NavLink>
             <NavLink to='/reportes'style={{color:'black'}}><Button color="inherit" startIcon={<BugReportIcon style={{color:'#FC7124'}}/>}>Reportar</Button></NavLink>
             <NavLink to="/help" style={{color:'black'}}><Button color="inherit" startIcon={<HelpIcon style={{color:'#FC7124'}} sx={{flexGrow:1}}/>}>Ayuda</Button></NavLink>
-            <Button>prueba</Button>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: {textAlign:'end '}}}>

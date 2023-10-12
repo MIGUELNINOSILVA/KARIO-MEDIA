@@ -31,7 +31,7 @@ const listaProyectos = [
   },
 ];
 
-const Proyectos = () => {
+const Proyectos = ({setMiFuncion}) => {
   const {proyectos} = useContext(ProyectoContext);
   const [listado, setListado] = useState([]);
 
@@ -56,7 +56,7 @@ const Proyectos = () => {
   };
   return (
     <>
-      <ModalProyectos nuevoElemento={nuevoElemento} listaProyectos={listado} />
+      <ModalProyectos nuevoElemento={nuevoElemento} listaProyectos={listado} setMiFuncion={setMiFuncion} />
       <div className="indicadoresDeTabla">
         <h5>Indicador</h5>
         <h5>Descripción</h5>

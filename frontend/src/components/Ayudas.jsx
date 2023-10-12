@@ -30,7 +30,10 @@ export const ListaDeAyudas = [
     }
 ]
 
-const Ayudas = () => {
+const Ayudas = ({setMiFuncion}) => {
+
+       
+      
 
     const [listado, setListado] = useState([])
 
@@ -51,7 +54,12 @@ const Ayudas = () => {
 
     return (
         <>
-        <ModalAyuda nuevoElemento={nuevoElemento} ListaDeAyudas={listado} />
+
+        <ModalAyuda nuevoElemento={nuevoElemento} ListaDeAyudas={listado} setMiFuncion={setMiFuncion} />
+            
+            
+            
+            
             {listado.map((ayuda, index) => (
                 <div key={index} className='ayudaTarjeta'>
                     <div className='usuarioAyuda'>

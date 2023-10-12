@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ResponsiveAppBar from './../components/ResponsiveAppBar'
 import Ayudas from '../components/Ayudas'
 import './../assets/css/help.css'
+import { useLocation } from 'react-router-dom'
 
 
 const help = () => {
 
+  const [miFuncion, setMiFuncion] = useState(null)
+
   return (
     <div>
-       <ResponsiveAppBar/>
-       
+       <ResponsiveAppBar miFuncion={miFuncion} />
        <div className="contenedorAyudas" >
-          <Ayudas/>
+          <Ayudas setMiFuncion={setMiFuncion}/>
        </div>
     </div>
   )

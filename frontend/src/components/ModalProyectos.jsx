@@ -1,15 +1,19 @@
 import { Button, Modal, TextField } from '@mui/material';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const ModalProyectos = ({nuevoElemento,listaProyectos}) => {
+const ModalProyectos = ({nuevoElemento,listaProyectos,setMiFuncion}) => {
     const {register , handleSubmit, formState:{errors} , reset} = useForm();
-    console.log(errors);
-    console.log(listaProyectos);
+
+    useEffect(()=>{
+        if(setMiFuncion){
+            setMiFuncion(()=>abrirCerrarModal);
+        }
+    },[setMiFuncion])
 
     const [modal, setModal] = useState(false)
 
@@ -140,13 +144,12 @@ const ModalProyectos = ({nuevoElemento,listaProyectos}) => {
                 </FormControl>
                 </div>
                 <Button type='submit' style={{backgroundColor:'#FC7124' , color:'white'}}>Enviar</Button>
-                <Button style={{color:'#FC7124'}}>Cancelar</Button>
+                <Button style={{color:'#FC7124'}} onClick={()=>{abrirCerrarModal()}}>Cancelar</Button>
             </form>
         </div>
     )
   return (
     <div style={{display:'flex',flexDirection:'row-reverse', margin:'10px',border:'#FC7124'}}>
-        <Button variant="outlined" style={{color:'#FC7124'}} onClick={()=>abrirCerrarModal()}>Añadir Proyecto</Button>
         <Modal open={modal} onClose={()=>abrirCerrarModal()} >
             {body}
         </Modal>

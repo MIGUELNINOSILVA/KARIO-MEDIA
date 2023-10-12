@@ -1,17 +1,26 @@
 import { Button, Modal, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form';
 
-const ModalAyuda = ({nuevoElemento,ListaDeAyudas}) => {
+const ModalAyuda = ({nuevoElemento,ListaDeAyudas,setMiFuncion}) => {
     const {register, handleSubmit, formState:{errors},reset} = useForm();
 
+
     const [modal, setModal] = useState(false);
-    const abrirCerrarModal = () =>{
+
+    useEffect(()=>{
+        if(setMiFuncion){
+            setMiFuncion(()=> abrirCerrarModalAyuda);
+        }
+    },[setMiFuncion])
+
+    const abrirCerrarModalAyuda = () =>{
         setModal(!modal )
     }
+
     const resetForm = () => {
         reset({ titulo: '', descripcion: '' }); 
-        abrirCerrarModal();
+        abrirCerrarModalAyuda();
     };
     
     const onSubmit = handleSubmit((data) => {
@@ -46,7 +55,7 @@ const ModalAyuda = ({nuevoElemento,ListaDeAyudas}) => {
             <br/>
             <br />
             <Button variant='contained' type='submit' style={{backgroundColor:'#FC7124'}}>Enviar</Button>
-            <Button variant='text' style={{color:'#FC7124'}}>Cancelar</Button>
+            <Button variant='text' style={{color:'#FC7124'}} onClick={()=>abrirCerrarModalAyuda()} >Cancelar</Button>
             </form>
 
         </div>
@@ -54,8 +63,7 @@ const ModalAyuda = ({nuevoElemento,ListaDeAyudas}) => {
    
   return (
     <div style={{display:'flex',flexDirection:'row-reverse', margin:'10px',border:'#FC7124'}}>
-        <Button variant="outlined" style={{color:'#FC7124'}} onClick={()=>abrirCerrarModal()}>Añadir ayuda</Button>
-        <Modal open={modal} onClose={()=>abrirCerrarModal()}>
+        <Modal open={modal} onClose={()=>abrirCerrarModalAyuda()}>
             {body}
         </Modal>
     </div>

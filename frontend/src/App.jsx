@@ -13,12 +13,12 @@ import UsuarioProvider from "./context/UsuarioProvider";
 import { useContext } from "react";
 import { UsuarioContext } from "./context/UsuarioContext";
 import Help from "./pages/Help";
+import AyudaProvider from "./context/AyudaProvider";
 
 export const App = () => {
   const { userLoginData } = useContext(UsuarioContext);
   console.log(userLoginData);
-  if(!userLoginData){
-    
+  if (!userLoginData) {
     localStorage.removeItem("user-data");
     localStorage.removeItem("user-token");
   }
@@ -26,7 +26,8 @@ export const App = () => {
 
   return (
     <>
-        <ProyectoProvider>
+      <ProyectoProvider>
+        <AyudaProvider>
           <Routes>
             <Route index element={<FondoLogin />} path="/login" />
             <Route index element={<FondoRegister />} path="/register" />
@@ -40,7 +41,8 @@ export const App = () => {
             ) : null}
             <Route element={<Error404 />} path="*" />
           </Routes>
-        </ProyectoProvider>
+        </AyudaProvider>
+      </ProyectoProvider>
     </>
   );
 };
